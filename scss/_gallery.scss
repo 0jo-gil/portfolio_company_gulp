@@ -1,0 +1,447 @@
+.popMask{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    
+    >div{
+        position: absolute;
+        left: -100%;
+        width: 100%;
+        height: calc(100% / 4);
+        background-color: #fff;
+
+        &.mask1{
+            top: 0;
+        }
+        &.mask2{
+            top: 25%;
+        }
+        &.mask3{
+            top: 50%;
+        }
+        &.mask4{
+            top: 75%;
+        }
+    }
+
+}
+
+.gallery{
+    width: 100%;
+
+    .sub_visual{
+        background-image: url(../img/gallery_banner.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 40px;
+    }
+
+
+    .inner{
+        width: 1180px;
+        margin: 0 auto;
+        position: relative;
+
+        .quickSearch{
+            width: calc(100% - 20px);
+            height: 230px;
+            background: #edebe7;
+            padding: 30px 50px;
+            margin-left: 10px;
+            margin-bottom: 20px;
+
+            .wrap{
+                width: 100%;
+                height: 100%;
+
+                .innerTxt{
+                    width: 50%;
+                    height: 100%;
+                    float: left;
+                    position: relative;
+
+                    h1{
+                        font: 28px/1 'Jost', sans-serif;
+                        font-weight: 700;
+                        color: #111;
+                        position: relative;
+                        top: 50px;
+                    }
+                    p{
+                        font: 15px/1 'Noto Sans', sans-serif;
+                        color: #111;
+                        position: relative;
+                        top: 90px;
+                    }
+                }
+
+                .quickList{
+                    width: 50%;
+                    height: 100%;
+                    float: right;
+                    font-size: 0;
+
+                    ul{
+                        width: 100%;
+                        // height: 100%;
+
+                        li{
+                            width: 100px;
+                            // height: 100%;
+                            display: inline-block;
+                            margin-top: 20px;
+                            margin-right: 20px;
+
+                            a{
+                                display: block;
+                                width: 100%;
+
+                                span{
+                                    display: block;
+                                    width: 100%;
+                                    height: 100px;
+                                    background: #f7f7f7;
+                                    border-radius: 50%;
+                                    text-align: center;
+                                    left: 50%;
+                                    top: 0;
+                                    transition: 0.5s;
+                                }
+                                p{
+                                    font: 18px/1 'Jost', sans-serif;
+                                    color: #111;
+                                    text-align: center;
+                                    margin-top: 20px;
+                                }
+                            }
+
+                            &:hover{
+                                span{
+                                    background: darkseagreen;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .sub_search{
+            width: calc(100% - 20px);
+            height: 100px;
+            margin-left: 10px;
+            background: #edebe7;
+            text-align: center;
+        }
+
+        .gallery_box{
+
+            &.on ul{
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            ul{
+                width: 100%;
+                opacity: 0;
+                transform: scale(0.1);
+                transition: transform 1s;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+
+                li{
+                    width: 25%;
+                    height: 450px;
+                    float: left;
+                    cursor: pointer;
+                    padding: 20px 10px;
+
+                    &:nth-of-type(4){
+                        margin-right: 0;
+                    }
+
+                    &.on{
+                        .inner{
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    .inner{
+                        width: 100%;
+                        height: 100%;
+                        padding: 20px;
+                        background: rgb(237, 235, 231);
+                        transition: 0.5s;
+                        transform: scale(1);
+
+                        .picTxt{
+                            width: 100%;
+                            height: 60%;
+                            position: relative;
+
+                            &::after{
+                                content: '';
+                                display: block;
+                                width: 100%;
+                                height: 1.5px;
+                                background: #ddd;
+                                position: absolute;
+                                left: 0;
+                                bottom: 40px;
+                            }
+                        
+                            >h1{
+                                font: 25px/1 'Jost', sans-serif;
+                                font-weight: 400;
+                                font-style: italic;
+                                color: #000;
+                                opacity: 0.5;
+                                padding-top: 10px;
+                                transition: 0.5s;
+                            }
+
+                            >span{
+                                font: 60px/1 'Jost', sans-serif;
+                                color: #111;
+                                font-weight: 700;
+                                opacity: 0.1;
+                                font-style: italic;
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                transition: 0.5s;
+                            }
+                        }
+
+                        >a{
+                            display: block;
+                            width: 100%;
+                            height: 40%;
+
+                            >img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+
+
+                    &:nth-of-type(even){
+                        .picTxt{
+                            height: 50%;
+                        }
+
+                        .inner>a{
+                            height: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//tablet layout
+@media screen and (max-width: 1179px){
+    .gallery{
+    
+        .inner{
+            width: 100%;
+            padding: 0 20px;
+    
+            .quickSearch{
+                height: auto;
+                .wrap{
+    
+                    .innerTxt{
+                        width: 100%;
+                        text-align: center;
+    
+                        h1{
+                            font-size: 24px;
+                            top: auto;
+                            margin-bottom: 10px;
+                        }
+                        p{
+                            font-size: 14px;
+                            top: auto;
+                        }
+                    }
+    
+                    .quickList{
+                        width:100%;
+    
+                        ul{
+
+                            li{
+                                width: calc(100% / 4);
+                                margin-right: 0;
+    
+                                a{
+    
+                                    span{
+                                        width: 11vw;
+                                        height: 11vw;
+                                        margin: 0 auto;
+                                    }
+                                    p{
+                                        font-size: 15px;
+                                        margin-top: 10px;
+                                    }
+                                }
+    
+                                &:hover{
+                                    span{
+                                        background: darkseagreen;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .sub_search{
+                
+                .pic_search{
+
+                    button{
+                        font-size: 12px;
+                    }
+                }
+            }
+    
+            .gallery_box{
+    
+                &.on ul{
+                    transform: scale(1);
+                    opacity: 1;
+                }
+    
+                ul{
+    
+                    li{
+                        width: calc(100% / 3);
+    
+                        .inner{
+    
+                            .picTxt{
+                            
+                                >h1{
+                                    font: 22px/1 'Jost', sans-serif;
+                                    position: relative;
+                                    top: 60px;
+                                }
+    
+                                >span{
+                                    font: 40px/1 'Jost', sans-serif;
+                                    top: 0;
+                                    left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//mobile layout
+@media screen and (max-width: 539px){
+    .gallery{
+    
+        .inner{
+    
+            .quickSearch{
+
+                .wrap{
+    
+                    .innerTxt{
+    
+                        h1{
+                            font-size: 22px;
+                        }
+                        p{
+                            font-size: 12px;
+                            top: auto;
+                        }
+                    }
+    
+                    .quickList{
+    
+                        ul{
+
+                            li{
+    
+                                a{
+    
+                                    span{
+                                        width: 12vw;
+                                        height: 12vw;
+                                    }
+                                    p{
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .sub_search{
+                
+                .pic_search{
+                    width: 90%;
+                    button{
+                        font-size: 11px;
+                    }
+                }
+            }
+            .gallery_box{
+    
+                ul{
+    
+                    li{
+                        width: 100%;
+                        height: 500px;
+                        .inner{
+
+                            .picTxt{
+                                height: 40%;
+
+                                >h1{
+                                    font-size: 20px;
+                                }
+    
+                                >span{
+                                    font-size: 34px;
+                                }
+                            }
+
+                            a{
+                                height: 60%;
+                            }
+                        }
+                        
+                        &:nth-of-type(even){
+                            .inner a{
+                                height: 60%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

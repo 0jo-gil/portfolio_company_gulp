@@ -1,0 +1,102 @@
+{
+    "executive": [
+        {
+            "className" : ".executive",
+            "department": "Executive",
+            "name": "name1",
+            "position": "CEO",
+            "src": "img/department/executive1.png"
+        },
+        {
+            "className" : ".executive",
+            "department": "Exceutive",
+            "name": "name2",
+            "position": "Senior vice president",
+            "src": "img/department/executive2.png"
+        },
+        {
+            "className" : ".executive",
+            "department": "Exceutive",
+            "name": "name",
+            "position": "Senior vice president",
+            "src": "img/department/executive3.png"
+        }
+  
+    ],
+
+    "design": [
+        {
+            "className" : ".design",
+            "department": "Design&Marketing",
+            "name": "name3",
+            "position": "Product Director",
+            "src": "img/department/design1.png"
+        },
+        {
+            "className" : ".design",
+            "department": "Design&Marketing",
+            "name": "name4",
+            "position": "Industrial Designer",
+            "src": "img/department/design2.png"
+        },
+        {
+            "className" : ".design",
+            "department": "Design&Marketing",
+            "name": "name5",
+            "position": "Industrial Designer",
+            "src": "img/department/design3.png"
+        }
+    ],
+
+    "cs": [
+        {
+            "className" : ".cs",
+            "department": "CS",
+            "name": "name6",
+            "position": "Service Claim",
+            "src": "img/department/cs1.png"
+        },
+        {
+            "className" : ".cs",
+            "department": "CS",
+            "name": "name7",
+            "position": "CS Agent",
+            "src": "img/department/cs2.png"
+        }
+    ],
+
+    "purchase": [
+        {
+            "className" : ".purchase",
+            "department": "PURCHASE",
+            "name": "name8",
+            "position": "Purchasing Director",
+            "src": "img/department/purchase1.png"
+        },
+        {
+            "className" : ".purchase",
+            "department": "PURCHASE",
+            "name": "name10",
+            "position": "Purchasing Director",
+            "src": "img/department/purchase2.png"
+        }
+    ],
+
+    "accounting": [
+        {
+            "className" : ".accounting",
+            "department": "ACCOUNTING",
+            "name": "name8",
+            "position": "Controller",
+            "src": "img/department/accounting1.png"
+        },
+        {
+            "className" : ".accounting",
+            "department": "ACCOUNTING",
+            "name": "name10",
+            "position": "Bookkeeper",
+            "src": "img/department/accounting2.png"
+        }
+    ]
+
+}

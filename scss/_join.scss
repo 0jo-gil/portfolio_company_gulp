@@ -1,0 +1,653 @@
+.checkJoin{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .alertBox{
+        width: 420px;
+        height: 240px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 40px;
+        position: relative;
+
+        span{
+            display: block;
+            font: bold 16px/1 'Noto Sans KR', sans-serif;
+            color: #111;
+            text-align: center;
+        }
+        p{
+            font: 16px/1 'NotoSans KR', sans-serif;
+            color: #777;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .alertClose{
+            display: block;
+            width: 100%;
+            height: 60px;
+            background: #111;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font: 16px/60px 'NotoSans KR', sans-serif;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+}
+
+
+.join{
+    width: 100%;
+    .sub_visual{
+        margin-bottom: 40px;
+    }
+    .inner{
+
+        .join_banner{
+            width: 100%;
+            margin-bottom: 40px;
+            >h1{
+                display: block;
+                height: 60px;
+                font: 13px/60px 'Jost', sans-serif;
+                color: #bbb;
+                font-weight: 700;
+                margin-bottom: 30px;
+                position: relative;
+                letter-spacing: 2px;
+                text-align: left;
+                z-index: 2;
+
+    
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 30px;
+                    height: 2px;
+                    background: #bbb;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+    
+                }
+            }
+
+            .wrap{
+                width: 100%;
+                padding: 40px;
+                border: 3px solid #eee;
+
+                .join_banner_left{
+                    width: 30%;
+                    float: left;
+                    font-size: 0;
+
+                    h2{
+                        font: bold 20px/1 'Noto Sans', sans-serif;
+                        color: #444;
+                        padding-top: 10px;
+                        padding-left: 40px;
+
+                        span{
+                            font-size: 20px;
+                            line-height: 40px;
+                            color: #fff;
+                            text-align: center;
+                            display: inline-block;
+                            width: 40px;
+                            height: 40px;
+                            background: #aaa;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                .join_banner_right{
+                    width: 70%;
+                    float: right;
+                    padding-top: 10px;
+
+                    p{
+                        font: 15px/1 'Noto Sans', sans-serif;
+                        color: #444;
+                        margin-bottom: 10px;
+
+                    }
+                }
+            }
+        }
+
+        .joinCheck{
+        
+         
+
+            h2{
+                font: bold 22px/1 'Noto Sans', sans-serif;
+                color: #333;
+                margin-bottom: 10px;
+            }
+
+            >p{
+                font: 13px/1.6 'Noto Sans', sans-serif;
+                color: #999;
+                margin-bottom: 40px;
+            }
+
+            .checkAgree{
+                margin-bottom: 10px;
+
+                input[type=checkbox]{
+                    width: 15px;
+                    height: 15px;
+                    position: relative;
+                    top: 2px;
+                }
+
+                label{
+
+                    span{
+                        font: bold 15px/1 'Jost', sans-serif;
+                        color: #111;
+                        letter-spacing: 0.5px;
+                    }
+                }
+                &:nth-of-type(1){
+                    margin-bottom: 40px;
+                }
+            }
+
+            textarea{
+                width: 100%;
+                height: 180px;
+                resize: none;
+                padding: 20px 30px;
+                font: 14px/1.4 'Jost', sans-serif;
+                overflow: auto;
+                margin-bottom: 40px;
+                border: 1px solid #aaa;
+                background: #eee;
+
+                &:last-of-type{
+                    margin-bottom: 60px;
+                }
+            } 
+        }
+
+
+        .memberJoin{
+            width: 100%;
+            margin-top: 40px;
+
+            >h2{
+                font: bold 22px/1 'Noto Sans', sans-serif;
+                color: #333;
+                position: relative;
+                margin-bottom: 10px;
+
+            }
+
+            >p{
+                font: 13px/1.6 'Noto Sans', sans-serif;
+                color: #999;
+                margin-bottom: 40px;
+            }
+
+            table{
+                width: 100%;
+
+                tr{
+
+                    th{
+                        width: 20%;
+                        padding-top: 10px;
+                        padding-bottom: 50px;
+                        vertical-align: top;
+                        text-align: left;
+                        font: bold 15px/40px 'arial';
+                        color: #111;
+
+                        &.required::before{
+                            content: "*";
+                            display: inline-block;
+                            margin-right: 5px;
+                            color: red;
+                            position: relative;
+                            top: 1.5px;
+                        }
+                    }
+
+                    td{
+                        width: 80%;
+                        padding-top: 10px;
+                        padding-bottom: 50px;
+                        font: 16px/1 'arial';
+                        color: #111;
+
+                        span.redTxt{
+                            position: relative;
+                            top: 1.5px;
+                            color: red;
+                        }
+
+                        input[type=text], input[type=password]{
+                            width: 500px;
+                            height: 40px;
+                            padding: 0 10px;
+                            border: 1px solid #aaa;
+                            background: transparent;
+
+                           
+                        }
+
+                        .confirmId{
+                            display: inline-block;
+                            position: relative;
+                            vertical-align: top;
+                            width: 120px;
+                            height: 40px;
+                            background: #333;
+                            color: #fff;
+                            font: 15px/40px 'arial';
+                            letter-spacing: 0.5px;
+                            text-align: center;
+                        }
+
+                        .pwdCheckbox{
+
+                            >p{
+                                font: 14px/1 'arial';
+                                color: #999;
+                                padding: 10px 0;
+                                // transition: 0.3s;
+
+                                &.pass{
+                                    color: green;
+                                }
+
+                                &.err{
+                                    color: red;
+                                }
+                            }
+                        }
+
+                        .pwdCompare{
+                            display: inline-block;
+                            margin-left: 5px;
+
+                            >p{
+                                font: 14px/1 'arial';
+                                display: none;
+
+                                &.pwdPass{
+                                    color: green;
+                                }
+                                &.pwdNot{
+                                    color: red;
+                                }
+                            }
+                        }
+                        
+                        input[name=email1]{
+                            width: 240px;
+                        }
+
+                        select[name=email2]{
+                            width: 240px;
+                            height: 40px;
+                            border: 1px solid #aaa;
+                            background: transparent;
+                            padding: 0 10px;
+                        }
+
+
+                        select[name=company]{
+                            width: 158px;
+                            height: 40px;
+                            border: 1px solid #aaa;
+                            background: transparent;
+                            padding: 0 10px;
+                        }
+                        input[name=phone]{
+                            width: 339px;
+                        }
+                    }
+
+                    
+                }
+
+                &.joinInfo1{
+                    border-bottom: 1px solid #aaa;
+                }
+            }
+            
+            .joinInfo2{
+                tr{
+                    &:nth-of-type(2){
+                        td{
+                            label{
+                                font: 15px/1 'arial';
+                                color: #111;
+                            }
+                            p{
+                                font: 13px/1 'arial';
+                                color: #999;
+                                margin-top: 10px;
+                                letter-spacing: 0.5px;
+                            }
+
+                            input[name=year], select[name=month], input[name=day]{
+                                width: 158px;
+                                height: 40px;
+                                background: transparent;
+                                border: 1px solid #aaa;
+                                padding: 0 10px;
+                            }
+
+                            .radioGender{
+                                margin-top: 10px;
+
+                                input[type=radio]{
+                                    position: relative;
+                                    top: 1.4px;
+                                    margin-right: 5px;
+
+                                    &[id=female]{
+                                        margin-left: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(3){
+                        td{
+                            line-height: 40px;
+
+                            input[type=radio]{
+                                position: relative;
+                                top: 1.4px;
+                            }
+                            label{
+                                font: 15px/1 'arial';
+                                color: #111;
+                                margin-right: 30px;
+                            }
+                            p{
+                                font: 13px/1 'arial';
+                                color: #999;
+                                letter-spacing: 0.5px;
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(4){
+                        td{
+                            p{
+                                font: 13px/1 'arial';
+                                color: #111;
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+
+                    td{
+
+                        textarea{
+                            width: 100%;
+                            height: 100px;
+                            padding: 10px;
+                            resize: none;
+                            background: #eee;
+                            font: 14px/1.4 'Jost', sans-serif;
+                            border: 1px solid #aaa;
+                        }
+
+                        .marketingBox{
+                            text-align: right;
+                            margin-top: 10px;
+
+                            >input[type=radio]{
+                                position: relative;
+                                top: 1.4px;
+                                margin-left: 10px;
+                            }
+                            >label{
+                                font: 15px/1 'arial';
+                                color: #111;
+                            }
+                        }
+                    }
+
+                    &:last-of-type{
+
+                        th{
+                            padding: 40px 0;
+                            border-top: 1px solid #aaa;
+                            text-align: center;
+                        }
+                    }
+
+                    input[type=reset]{
+                        width: 140px;
+                        height: 50px;
+                        background: #eee;
+                        border: none;
+                        font: bold 14px/50px 'Noto Sans KR', sans-serif;
+                        color: #111;
+                        cursor: pointer;
+                    }
+                    input[type=submit]{
+                        width: 140px;
+                        height: 50px;
+                        background: #304d78;
+                        border: none;
+                        font: bold 14px/50px 'Noto Sans KR', sans-serif;
+                        color: #fff;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//tablet layout
+
+@media screen and (max-width: 1179px){
+    
+    
+    .join{
+        width: 100%;
+
+        .inner{
+            width: 100%;
+
+            .joinCheck{
+                padding: 0 20px;
+            }
+    
+    
+            .memberJoin{
+                padding: 0 20px;
+    
+                >h1{
+                    font-size: 24px;
+                }
+    
+                >p{
+                    font-size: 16px;
+                }
+    
+                table{
+                    width: 100%;
+    
+                    tr{
+    
+                        th{
+                            width: 135px;
+                        }
+    
+                        td{
+                            input[type=text], input[type=password]{
+                                width: 40vw;
+                            }
+    
+                            .pwdCheckbox{
+    
+                                >p{
+                                    font-size: 12px;
+                                }
+                            }
+    
+                            .pwdCompare{
+    
+                                >p{
+                                    font-size: 12px;
+                                }
+                            }
+                            
+                            input[name=email1]{
+                                width: 40vw;
+                                margin-bottom: 10px;
+                            }
+    
+                            select[name=email2]{
+                                width: 40vw;
+                            }
+    
+    
+                            select[name=company]{
+                                width: 15vw;
+                                height: 40px;
+                                border: 1px solid #aaa;
+                                background: transparent;
+                                padding: 0 10px;
+                            }
+                            input[name=phone]{
+                                width: 30vw;
+                            }
+                        }
+    
+                        
+                    }
+                }
+                
+                .joinInfo2{
+                    tr{
+
+                        th{
+                            width: 135px;
+                        }
+                        &:nth-of-type(2){
+                            td{
+                                
+                                label{
+                                    font: 15px/1 'arial';
+                                }
+
+                                input[name=year], select[name=month], input[name=day]{
+                                    width: 17.3vw;
+                                }
+
+                            }
+                        }
+    
+                        &:nth-of-type(3){
+                            td{
+    
+                                label{
+                                    font: 15px/1 'arial';
+                                    color: #111;
+                                    margin-right: 30px;
+                                }
+                                p{
+                                    font: 12px/1 'arial';
+                                    color: #999;
+                                    letter-spacing: 0;
+                                }
+                            }
+                        }
+    
+                        &:nth-of-type(4){
+                            td{
+                                p{
+                                    font: 12px/1.4 'arial';
+                                    color: #111;
+                                    margin-bottom: 20px;
+                                }
+                            }
+                        }
+    
+                        td{
+    
+                            textarea{
+                                width: 100%;
+                                height: 100px;
+                                padding: 10px;
+                                resize: none;
+                                background: #eee;
+                                font: 14px/1.4 'Jost', sans-serif;
+                                border: 1px solid #aaa;
+                            }
+    
+                            .marketingBox{
+                                text-align: right;
+                                margin-top: 10px;
+    
+                                >input[type=radio]{
+                                    position: relative;
+                                    top: 1.4px;
+                                    margin-left: 10px;
+                                }
+                                >label{
+                                    font: 15px/1 'arial';
+                                    color: #111;
+                                }
+                            }
+                        }
+    
+                        &:last-of-type{
+    
+                            th{
+                                padding: 40px 0;
+                                border-top: 1px solid #aaa;
+                                text-align: center;
+                            }
+                        }
+    
+                        input[type=reset]{
+                            width: 140px;
+                            height: 50px;
+                            background: #eee;
+                            border: none;
+                            font: bold 14px/50px 'Noto Sans KR', sans-serif;
+                            color: #111;
+                            cursor: pointer;
+                        }
+                        input[type=submit]{
+                            width: 140px;
+                            height: 50px;
+                            background: #304d78;
+                            border: none;
+                            font: bold 14px/50px 'Noto Sans KR', sans-serif;
+                            color: #fff;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
