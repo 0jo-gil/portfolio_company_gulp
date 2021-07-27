@@ -1,12 +1,13 @@
 let banner_posY = $("#banner").offset().top - 200;
-let brand_posY = $("#brand").offset().top - 500;
+let brand_posY = $("#brand").offset().top - 300;
 let news_posY = $("#news").offset().top;
+let about_posY = $("#about").offset().top;
 let brand_pic_index = 0;
 const $banner_content_pic = $(".banner_content_pic");
 const $content_pic1 = $banner_content_pic.find(".banner_content_pic1");
 const $content_pic2 = $banner_content_pic.find(".banner_content_pic2");
 
-let dragSize = 150;
+let dragSize = 100;
 let slide_count = 0;
 let isDown = false;
 let dragX, scrollLeft;
@@ -116,7 +117,7 @@ $(window).scroll(function(){
     $(".this_page").text(posY);
     
 
-    if(posY > banner_posY && posY < brand_posY){
+    if(posY > banner_posY && posY < about_posY){
 
         $("#banner").addClass("on");
 
@@ -157,7 +158,7 @@ $(window).scroll(function(){
         
     
 
-        if(posY > brand_posY + 500){
+        if(posY > brand_posY + 300){
             $(".brand_tit").addClass("on");
             // $(".brand_tit").find("h1").css({
             //     position: "absolute"
@@ -197,7 +198,7 @@ $banner_content_pic.on("mouseleave", function(){
 // };
 
 function brand_content_num(posY, index){
-    if(posY > $(".brand_content_wrap").eq(index).offset().top - 700){
+    if(posY > $(".brand_content_wrap").eq(index).offset().top - 600){
         $(".brand_content_wrap").eq(index).addClass("on");
 
         if(!brand_scroll){
@@ -263,3 +264,45 @@ function brand_scroll_pic(brand_currentY, brand_txt_ht){
         brand_pic_index--;
     }
 };
+
+
+//about section 탭메뉴
+
+$(".about_list_btn").find("li a").on("mouseenter", function(){
+    let target = $(this).attr("href");
+    let posY = $(this).position().top;
+
+    $(".about_list_box").find("li").removeClass("on");
+    $(target).addClass("on");
+
+    $(".about_line_bg").css({
+        top: posY
+    })
+
+});
+$(".about_list_btn").find("li a").on("click", function(e){
+    e.preventDefault();
+});
+
+//about buttom underline
+
+about_underline();
+
+function about_underline(){
+    $(".about_line_bg").css({
+        top: $(".about_list_btn").children("li").eq(0).children("a").position().top
+    })
+}
+
+//about section mousemove path move
+/*
+$("#about").on("mousemove", function(e){
+    let posX = e.pageX / 70;
+    let posY = e.pageY / 100;
+
+    $(".about_circle_path")
+        .css({
+            transform: `rotate3d(${posX},${posY / 20},${posX},${posY}deg) `
+        })
+})
+*/
