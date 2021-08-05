@@ -7,14 +7,12 @@ const $banner_content_pic = $(".banner_content_pic");
 const $content_pic1 = $banner_content_pic.find(".banner_content_pic1");
 const $content_pic2 = $banner_content_pic.find(".banner_content_pic2");
 
-let dragSize = 100;
-let slide_count = 0;
-let isDown = false;
-let dragX, scrollLeft;
 let brand_timer;
 let brand_scroll = false;
 
 
+
+/*
 $(".news_slider_inner").css({transform: "translateX(0)"});
 
 $(".news_slider_inner").on("mouseenter", function(){
@@ -62,7 +60,7 @@ $(".news_slider").on("mousemove", function(e){
     $(".news_slider_cursor").css({
         top: cursorY,
         left: cursorX
-    })
+    });
 
     if(!isDown) return;
 
@@ -70,8 +68,6 @@ $(".news_slider").on("mousemove", function(e){
     
     e.preventDefault();
     $(this).addClass("on");
-
-    
 
     if(dragX + dragSize < startX){
         if(posX < 0){
@@ -85,7 +81,7 @@ $(".news_slider").on("mousemove", function(e){
             $(".news_slider_inner").css({
                 transform: "translateX("+slide_count * items_wid+"px)"
             });
-        } 
+        };
     };
 
     if(dragX - dragSize > startX){
@@ -99,10 +95,10 @@ $(".news_slider").on("mousemove", function(e){
             $(".news_slider_inner").css({
                 transform: "translateX("+slide_count * items_wid+"px)"
             });
-        }
+        };
     };
 });
-
+*/
 
 
 $(window).scroll(function(){
@@ -140,24 +136,17 @@ $(window).scroll(function(){
     if(posY > brand_posY && posY < news_posY - news_ht){
         $("#brand").addClass("on");
 
-        if(posY > $(".brand_inner_content").offset().top - 700){
-            $(".brand_inner_content").addClass("on");
-        }
 
-   
-
-        for(let i=0; i<$(".brand_content_wrap").length; i++){
+        for(let i=0; i<$(".brand_txt").find("article").length; i++){
             brand_content_num(posY, i);
         };
-
-      
        
-        // brand_counter($(".brand_num_count1"), 57, 1000, posY);
-        // brand_counter($(".brand_num_count2"), 5, 2000, posY);
-        // brand_counter($(".brand_num_count3"), 60, 1500, posY);
-        
-    
+        // brand_counter($(".brand_num1"), 50, 1000);
+        // brand_counter($(".brand_num2"), 100, 1000);
+        // brand_counter($(".brand_num3"), 57, 1000);
 
+        brand_scroll_pic(brand_currentY, brand_ht);
+        
         if(posY > brand_posY + 300){
             $(".brand_tit").addClass("on");
             // $(".brand_tit").find("h1").css({
@@ -198,12 +187,12 @@ $banner_content_pic.on("mouseleave", function(){
 // };
 
 function brand_content_num(posY, index){
-    if(posY > $(".brand_content_wrap").eq(index).offset().top - 600){
-        $(".brand_content_wrap").eq(index).addClass("on");
+    if(posY > $("#brand").offset().top - 300){
+        $(".brand_txt").find("article").eq(index).children(".brand_inner_num").children("span").addClass("on");
 
         if(!brand_scroll){
             brand_scroll = true
-        $(".brand_num").each(function(){
+        $(".brand_inner_num span").each(function(){
             if(brand_scroll){
             $(this)
                 .prop("Counter", 0)
@@ -222,45 +211,38 @@ function brand_content_num(posY, index){
         }
     };  
 }
-/*
-function brand_counter(el, num, time, posY){
-    let item = el;
-    let current_num = item.text();
-    let counter_num = num - current_num;
-    let interval = time / counter_num;
-    
-    if(posY >= el.offset().top - 500){
-        brand_scroll = true;
-        if(brand_scroll == true){
-            
-            brand_scroll = false;
-            brand_timer = setInterval(function(){
 
-                if(current_num == num){
-                    clearInterval(brand_timer);
-                } else {
-                    current_num++;
-                };
-                item.text(current_num);
-                
-            }, interval);  
-                        
-            brand_scroll = true;
-        }
-    }
-}
-*/
+
+// function brand_counter(el, num, time){
+//     let item = el;
+//     let current_num = item.text();
+//     let counter_num = num - current_num;
+//     let interval = time / counter_num;
+//     console.log(counter_num);
+        
+//     brand_timer = setInterval(function(){
+//         // current_num++;
+
+//         if(current_num == num){
+//             clearInterval(brand_timer);
+//         };
+//         item.text(current_num);
+        
+//     }, interval);  
+                    
+// }
 
 
 
 
 
-function brand_scroll_pic(brand_currentY, brand_txt_ht){
-    if(brand_currentY > brand_txt_ht / 6 * brand_pic_index + 1){
-        $(".brand_pic").find("img").eq(brand_pic_index -1).css({zIndex: brand_pic_index });
+
+function brand_scroll_pic(brand_currentY, brand_ht){
+    if(brand_currentY > brand_ht / 16 * brand_pic_index + 1){
+        $(".brand_bg").find("img").eq(brand_pic_index -1).css({zIndex: brand_pic_index });
         brand_pic_index++;
     } else {
-        $(".brand_pic").find("img").eq(brand_pic_index -1).css({zIndex: -brand_pic_index});
+        $(".brand_bg").find("img").eq(brand_pic_index -1).css({zIndex: -brand_pic_index});
         brand_pic_index--;
     }
 };
@@ -268,18 +250,20 @@ function brand_scroll_pic(brand_currentY, brand_txt_ht){
 
 //about section 탭메뉴
 
-$(".about_list_btn").find("li a").on("mouseenter", function(){
+$(".about_list_btn").find("li a").on("mouseenter focusin", function(){
     let target = $(this).attr("href");
     let posY = $(this).position().top;
-
-    $(".about_list_box").find("li").removeClass("on");
-    $(target).addClass("on");
-
+    let isOn = $(target).hasClass("on");
+    
+    if(!isOn){
+        $(".about_list_box").find("li").removeClass("on").hide();
+        $(target).stop().fadeIn(100).addClass("on");
+    };
     $(".about_line_bg").css({
         top: posY
     })
-
 });
+
 $(".about_list_btn").find("li a").on("click", function(e){
     e.preventDefault();
 });
@@ -292,17 +276,30 @@ function about_underline(){
     $(".about_line_bg").css({
         top: $(".about_list_btn").children("li").eq(0).children("a").position().top
     })
-}
+};
 
-//about section mousemove path move
-/*
-$("#about").on("mousemove", function(e){
-    let posX = e.pageX / 70;
-    let posY = e.pageY / 100;
+//main contact input class
+$(".main_contact_info").find("input[type=text]").on("keyup", function(){
+    let val = $(this).val();
+    $(this).parent(".main_contact_info").addClass("on");
+    if(!val){
+        $(this).parent(".main_contact_info").removeClass("on");
+    };
+});
 
-    $(".about_circle_path")
-        .css({
-            transform: `rotate3d(${posX},${posY / 20},${posX},${posY}deg) `
-        })
-})
-*/
+//news section
+$(".news_btn").find("li a").on("click", function(e){
+    let target = $(this).attr("href");
+    let isOn = $(target).hasClass("active");
+    e.preventDefault();
+    console.log(target);
+
+    if(!isOn){
+        $(".news_slider").fadeOut(50).removeClass("active");
+        $(target).children(".news_slider_inner").css({transform: "translateX(0)"})
+        $(target).fadeIn(300).addClass("active");
+    };
+
+    $(".news_btn").find("li").removeClass("on");
+    $(this).parent("li").addClass("on");
+});
