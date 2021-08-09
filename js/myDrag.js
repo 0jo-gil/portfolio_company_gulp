@@ -16,6 +16,7 @@
         this.$slide_cursor = this.$slide_inner.find(".news_slider_cursor");
         this.isDown = false;
         this.slide_count = 0;
+        this.len = this.$slide_item.length * -1;
         this.dragSize = 100;
         this.dragX;
     };
@@ -96,9 +97,8 @@
                 if(posX >= -wid + (items_wid * 2)){
                     this.dragX = e.pageX;
                     --this.slide_count;
-                    console.log(this.slide_count);
-                    if(this.slide_count <=-4){
-                        this.slide_count = -4;
+                    if(this.slide_count <= this.len +1){
+                        this.slide_count = this.len +1;
                     }
                     this.$slide_inner.css({
                         transform: "translateX("+this.slide_count * items_wid+"px)"

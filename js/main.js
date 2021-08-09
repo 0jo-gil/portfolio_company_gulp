@@ -1,4 +1,3 @@
-
 //search toggle
 var $header_hi = $("#header").outerHeight();
 var slide_timer;
@@ -77,7 +76,6 @@ $(".topBtn").on("click", function(e){
 
 function moveScreen(){
     var targetPos = $("body").offset().top;
-
     $("html, body").animate({scrollTop: targetPos}, 500);
 };
 
@@ -88,13 +86,12 @@ var gnbSub_hi = $("#gnb").children("li").children("ul").outerHeight();
 var bgGnb_hi = $(".bgGnb").outerHeight();
 var $menuWeb  = $(".menuWeb");
 
-
 $(window).resize(widResize);
-
 
 $(".menuWeb").on("mouseenter focusin", function(){
     openSub();
 });
+
 $(".menuWeb").on("mouseleave focusout", function(){
     closeSub();
 
@@ -148,9 +145,6 @@ $("#gnb").children("li").on("mouseenter", function(){
     $(".gnbBg").css({opacity: 1});
 
 });
-
-
-
 
 function gnbBg(x){
     var gnb_li_ul_wid = $("#gnb").children("li").children("ul").outerWidth();

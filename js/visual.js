@@ -165,12 +165,14 @@ function wheelDown(){
 */
 
 //button 클릭 회전
-$next_btn.on("click", function(){
+$next_btn.on("click", function(e){
+    e.preventDefault();
     next_btn_click();
     isScroll = true;
 });
 
-$prev_btn.on("click", function(){
+$prev_btn.on("click", function(e){
+    e.preventDefault();
     prev_btn_click();
     isScroll = true;
 })
