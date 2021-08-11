@@ -1,88 +1,95 @@
+var $slide_btn = $(".slide_btn");
+var $btn_up = $slide_btn.find(".btn_up");
+var $btn_down = $slide_btn.find(".btn_down");
+var $pause_btn = $slide_btn.find(".pause_btn");
+var $start_btn = $slide_btn.find(".start_btn");
 
-init();
+var $notice_slide = $(".notice_slide");
+var $notice_slide_li = $notice_slide.find("li");
 
 var enableClick = true;
 var timer; 
 var window_wid = $(window).outerWidth();
-console.log(window_wid);
+
+//community notice slide motion
+init();
 
 timer = setInterval(noticeUp, 4000);
 
-
-$(".btn_up").on("click", function(e){
+$btn_up.on("click", function(e){
     e.preventDefault();
+    clearInterval(timer);
+    btnToggle($start_btn, $pause_btn);
     if(enableClick){
         noticeUp();
         enableClick = false;
     };
 });
 
-$(".btn_down").on("click", function(e){
+$btn_down.on("click", function(e){
     e.preventDefault();
+    clearInterval(timer);
+    btnToggle($start_btn, $pause_btn);
     if(enableClick){
         noticeDown();
         enableClick = false;
     };
 });
 
-$(".pause_btn").on("click", function(e){
+$pause_btn.on("click", function(e){
     e.preventDefault();
-
-    $(this).addClass("on");
-    $(".start_btn").removeClass("on");
+    btnToggle($start_btn, $(this));
     clearInterval(timer);
-
 });
 
-$(".start_btn").on("click", function(e){
+$start_btn.on("click", function(e){
     e.preventDefault();
-    
-    $(".pause_btn").removeClass("on");
-    $(".start_btn").addClass("on");
+    btnToggle($pause_btn, $(this));
     timer = setInterval(function(){noticeUp();}, 4000);
     return timer;
 });
 
+function btnToggle(el1, el2){
+    el1.removeClass("on");
+    el2.addClass("on");
+}
+
 function noticeUp(){
-    $(".notice_slide").animate({marginTop: "-140px"}, 500, function(){
-        $(".notice_slide").css({marginTop: "-70px"});
-        $(".notice_slide").children("li").first().appendTo(".notice_slide");
+    $notice_slide.animate({marginTop: "-140px"}, 500, function(){
+        $notice_slide.css({marginTop: "-70px"});
+        $notice_slide.children("li").first().appendTo($notice_slide);
         enableClick = true;
     });
 };
 
 function noticeDown(){
-    $(".notice_slide").animate({marginTop: "0"}, 500, function(){
-        $(".notice_slide").css({marginTop: "-70px"});
-        $(".notice_slide").children("li").last().prependTo(".notice_slide");
+    $notice_slide.animate({marginTop: "0"}, 500, function(){
+        $notice_slide.css({marginTop: "-70px"});
+        $notice_slide.children("li").last().prependTo($notice_slide);
         enableClick = true;
     });
 };
 
 function init(){
-    var len = $(".notice_slide").children("li").length;
+    var len = $notice_slide_li.length;
     
-    $(".notice_slide").css({
+    $notice_slide.css({
         height: 100 * len + "%",
         marginTop: "-70px"
     });
-    $(".notice_slide").children("li").css({
+    $notice_slide_li.css({
         height: 100 / len + "%"
     });
-    $(".notice_slide").children("li").last().prependTo(".notice_slide");
+    $notice_slide.children("li").last().prependTo($notice_slide);
 };
 
-
-
 //community board 내용 비동기 호출
-
 var frame = $(".community_box");
 var faq = $(".faq_menu").find(".wrap");
 var url = "data/community.json";
 var arr = [];
 
 callData(url);
-
 
 function callData(url){
     $.ajax({
@@ -146,7 +153,7 @@ function createTable(target, data){
                 )
         )
     })
-}
+};
 
 function createFaq(target, data){
     var items = data.faq;
@@ -173,34 +180,5 @@ function createFaq(target, data){
                 ),
             $("<dd>").text(text)
         )
-    })
-
-    // target.find("dt").eq(0).attr("class", "on");
-}
-
-//faq toggle event
-// var $faq_frame = $(".faq_menu").children(".wrap");
-// var $btns = $faq_frame.find("dt");
-// var $boxes = $btns.find("dd");
-
-// $("body").on("click", ".faq_menu dt", function(e){
-//     e.preventDefault();
-//     activation(this);
-// });
-
-// function activation(el){
-//     var isOn = $(el).hasClass("on");
-
-
-//     $(".faq_menu").find("dt").removeClass("on");
-//     $(".faq_menu").find("dd").slideUp();
-
-//     if(isOn){
-//         $(el).addClass("on");
-//         $(el).next().slideUp();
-//     };
-
-//     $(el).addClass("on");
-//     $(el).next().slideDown();
-  
-// };
+    });
+};

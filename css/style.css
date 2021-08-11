@@ -3211,6 +3211,10 @@ body {
   width: 100%;
   height: 300px;
   position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 40px;
 }
 .content .sub_visual::after {
   content: "";
@@ -3758,10 +3762,7 @@ body {
   }
 }
 .community .sub_visual {
-  background-image: url(../img/community_banner.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-y: center;
+  background-image: url(../img/community/community_main.jpg);
 }
 
 .community {
@@ -3812,10 +3813,6 @@ body {
 .community .inner .notice_wrap .notice_slide li {
   width: 100%;
   height: calc(100% / 5);
-}
-.community .inner .notice_wrap .notice_slide li a {
-  display: block;
-  height: 100%;
   font: 15px/70px "Jost", sans-serif;
   color: #444;
 }
@@ -4588,10 +4585,7 @@ body {
 }
 
 .youtube .sub_visual {
-  background-image: url(../img/youtube_banner.jpeg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: url(../img/youtube/youtube_main.jpg);
 }
 
 .youtube .inner {
@@ -4927,6 +4921,7 @@ body {
 @media screen and (max-width: 1179px) {
   .youtube .inner {
     width: 100%;
+    padding: 0 20px;
   }
   .youtube .inner .video1 .vidGallery .galleryBtn {
     left: 440px;
@@ -4984,151 +4979,8 @@ body {
     transform: translateY(-120%);
   }
 }
-.checkBg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: none;
-}
-.checkBg .alertBox {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  padding: 40px;
-}
-.checkBg .alertBox p {
-  font: bold 20px/1 "Jost", sans-serif;
-  color: #111;
-  margin-bottom: 40px;
-}
-.checkBg .alertBox span {
-  display: block;
-  font: 15px/1 "Jost", sans-serif;
-  color: #999;
-  margin-bottom: 30px;
-}
-.checkBg .alertBox .alertBtn {
-  display: block;
-  width: 100%;
-  height: 40px;
-  font: bold 16px/40px "Jost", sans-serif;
-  background: #444;
-  color: #fff;
-  text-align: center;
-}
-
-.join_check .wrap form {
-  width: 70%;
-  float: left;
-  padding: 40px;
-  background: #eee;
-  position: relative;
-}
-.join_check .wrap form h1 {
-  font: bold 24px/1 "Jost", sans-serif;
-  margin-bottom: 40px;
-}
-.join_check .wrap form .checkAgree {
-  margin-bottom: 10px;
-}
-.join_check .wrap form .checkAgree input[type=checkbox] {
-  width: 15px;
-  height: 15px;
-  position: relative;
-  top: 2px;
-}
-.join_check .wrap form .checkAgree label span {
-  font: bold 15px/1 "Jost", sans-serif;
-  color: #444;
-  letter-spacing: 0.5px;
-}
-.join_check .wrap form .checkAgree:nth-of-type(1) {
-  margin-bottom: 40px;
-}
-.join_check .wrap form textarea {
-  width: 100%;
-  height: 180px;
-  resize: none;
-  padding: 20px 30px;
-  font: 14px/1.4 "Jost", sans-serif;
-  overflow: auto;
-  margin-bottom: 40px;
-}
-.join_check .wrap form textarea:last-of-type {
-  margin-bottom: 60px;
-}
-.join_check .wrap form a {
-  font: bold 15px/1 "Jost", sans-serif;
-  color: #444;
-  letter-spacing: 0.5px;
-}
-.join_check .wrap form input[type=submit] {
-  width: 200px;
-  height: 40px;
-  position: absolute;
-  right: 40px;
-  bottom: 30px;
-  background: #333;
-  font: 15px/40px "Jost", sans-serif;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-.join_check .wrap .joinInfo {
-  width: 30%;
-  height: 1008px;
-  float: right;
-  padding: 40px 30px;
-  background: #fff;
-}
-.join_check .wrap .joinInfo .questionBox {
-  width: 100%;
-  margin-bottom: 100px;
-}
-.join_check .wrap .joinInfo .questionBox p {
-  font: 15px/1 "Jost", sans-serif;
-  color: #444;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #999;
-}
-.join_check .wrap .joinInfo .questionBox span {
-  display: block;
-  width: 100%;
-  padding: 15px 0;
-  font: 15px/1 "Jost", sans-serif;
-  color: #666;
-  letter-spacing: 0.7px;
-  border-bottom: 1px solid #999;
-}
-.join_check .wrap .joinInfo .questionBox span:last-of-type {
-  border: none;
-}
-.join_check .wrap .joinInfo .infoBox {
-  width: 100%;
-  background: #ddd;
-  padding: 40px 20px;
-}
-.join_check .wrap .joinInfo .infoBox p {
-  font: bold 18px/1 "Jost", sans-serif;
-  color: #444;
-  padding-bottom: 30px;
-}
-.join_check .wrap .joinInfo .infoBox span {
-  display: block;
-  width: 100%;
-  padding: 15px 0;
-  font: 15px/1 "Jost", sans-serif;
-  color: #666;
-  letter-spacing: 0.7px;
-  border-bottom: 1px solid #999;
-}
-.join_check .wrap .joinInfo .infoBox span:last-of-type {
-  border: none;
+.join .sub_visual {
+  background-image: url(../img/join/join_main.jpg);
 }
 
 .checkJoin {
@@ -5619,10 +5471,7 @@ body {
   }
 }
 .location .sub_visual {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 40px;
+  background-image: url(../img/location/location_main.jpg);
 }
 
 .location .inner {
@@ -6412,11 +6261,7 @@ body {
   width: 100%;
 }
 .gallery .sub_visual {
-  background-image: url(../img/gallery_banner.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 40px;
+  background-image: url(../img/gallery/gallery_main.jpg);
 }
 .gallery .inner {
   width: 1180px;
@@ -6472,9 +6317,10 @@ body {
 .gallery .inner .quickSearch .wrap .quickList ul li a {
   display: block;
   width: 100%;
+  font-size: 0;
 }
-.gallery .inner .quickSearch .wrap .quickList ul li a span {
-  display: block;
+.gallery .inner .quickSearch .wrap .quickList ul li a div {
+  display: inline-block;
   width: 100%;
   height: 100px;
   background: #f7f7f7;
@@ -6483,6 +6329,16 @@ body {
   left: 50%;
   top: 0;
   transition: 0.5s;
+  position: relative;
+  transform: translateX(-50%);
+}
+.gallery .inner .quickSearch .wrap .quickList ul li a div span {
+  font-size: 30px;
+  color: #b6b4b2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .gallery .inner .quickSearch .wrap .quickList ul li a p {
   font: 18px/1 "Jost", sans-serif;
@@ -6490,7 +6346,7 @@ body {
   text-align: center;
   margin-top: 20px;
 }
-.gallery .inner .quickSearch .wrap .quickList ul li:hover span {
+.gallery .inner .quickSearch .wrap .quickList ul li:hover div {
   background: darkseagreen;
 }
 .gallery .inner .sub_search {
@@ -6690,6 +6546,10 @@ body {
     height: 60%;
   }
 }
+.department .sub_visual {
+  background-image: url(../img/department/department_main.jpg);
+}
+
 .department {
   /*
   // .departmentList{

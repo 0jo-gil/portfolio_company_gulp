@@ -3,9 +3,7 @@
         //key : 
         type: "interest",
         count : 10
-    }
-
-    
+    };
     
     $.fn.MyYoutube = function(option){
         
@@ -17,12 +15,12 @@
 
         new Youtube(this, result_opt);
         return this;
-    }
+    };
 
     function Youtube(el, option){
         this.init(el, option);
         this.bindingEvent(option);
-    }
+    };
     
     Youtube.prototype.init = function(el, opt){
         this.frame = el;
@@ -31,7 +29,8 @@
         this.count = opt.count;
         this.text = opt.text;
         this.type = opt.type;
-    }
+    };
+
     Youtube.prototype.bindingEvent= function(opt){
         this.callData({
             type: opt.type
@@ -47,7 +46,8 @@
             e.preventDefault();
             this.removePop();
         }.bind(this));
-    }
+    };
+
     Youtube.prototype.callData= function(opt){
         $.ajax({
             url: "https://www.googleapis.com/youtube/v3/playlistItems",
@@ -68,10 +68,9 @@
         .error(function(err){
             console.error(err);
         })
-    }
+    };
 
     Youtube.prototype.createList= function(items, opt){
-        console.log(opt.type === "playlist");
         if(opt.type == "playlist"){
             $(".videoTit")
                 .append(
@@ -90,10 +89,7 @@
                     $("<p>"),
                     $("<span>")
                 )
-        }
-
-        console.log(this.type);
-    
+        };
 
         $(items).each(function(index, data){  
             var tit = data.snippet.title;
@@ -124,17 +120,6 @@
                                     
                             )      
                     )
-           
-                // $(".videoTit").children("ul").children(".wrap")
-                //     .append(
-                //         $("<li>")
-                //             .append(
-                //                 $("<p>").text(tit),
-                //                 $("<span>").text(date)
-                //             )
-                // )
-
-                // $(".totalNum").text("/ "+ index);
             };   
 
             if(opt.type == "art"){
@@ -167,7 +152,6 @@
         var window_wid = $(window).outerWidth();
 
         $(".gallery_list").children(".wrap").css({width: article_wid * 10 + 60});
-        console.log(window_wid);
         if(window_wid < 540){
             $(".gallery_list").children(".wrap").css({width: "calc(100% * 10)"});
         }
@@ -201,7 +185,7 @@
                     .append(
                         $("<img src='img/loading.gif'>")
                             .css({
-                                width: 80,
+                                width: 400,
                                 position: "absolute",
                                 top: "50%",
                                 left: "50%",

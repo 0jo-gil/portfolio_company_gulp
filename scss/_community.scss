@@ -1,12 +1,5 @@
-.community{
-
-    .sub_visual{
-        background-image: url(../img/community_banner.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position-y: center;
-    }
-
+.community .sub_visual{
+    background-image: url(../img/community/community_main.jpg);
 }
 
 .community{
@@ -58,13 +51,8 @@
                 li{
                     width: 100%;
                     height: calc(100% / 5);
-
-                    a{
-                        display: block;
-                        height: 100%;
-                        font: 15px/70px 'Jost', sans-serif;
-                        color: #444;
-                    }
+                    font: 15px/70px 'Jost', sans-serif;
+                    color: #444;
                 }
             }
 

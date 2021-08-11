@@ -60,37 +60,30 @@ for(var i=0; i< markerOptions.length; i++){
             moveTo(markerOptions[index].latlng); 
         }
     })(i);   
-}
+};
 
 window.onresize = function(){
     var active_btn = document.querySelector(".branch li"); 
     var active_index = active_btn.getAttribute("data-index"); 
     console.log(active_index); 
     map.setCenter(markerOptions[active_index].latlng);
-}
-
-
-
+};
 
 function moveTo(target){
     var moveLatLon = target; 
     map.setCenter(moveLatLon); 
-}
-   
-
+};
 
 setDraggable(false);
 function setDraggable(draggable) {
-    
     map.setDraggable(draggable);    
-}
+};
 
 
 setZoomable(false); //false 
 function setZoomable(zoomable) {
- 
     map.setZoomable(zoomable);    
-}
+};
 
 var $naviBtn = $(".locationNavi").find("li");
 var $naviBtn_a = $naviBtn.children("a");
@@ -102,13 +95,6 @@ $naviBtn_a.on("click focusin", function(e){
     naviTab(this, target);
 });
 
-// $mapTab_dt.children("a").on("click focusin", function(e){
-//     e.preventDefault();
-//     var target = $(this).attr("href");
-
-//     mapTab(this, target)
-// });
-
 function naviTab(el, target){
     $naviBtn.removeClass("on");
     $(el).parent("li").addClass("on");
@@ -116,13 +102,4 @@ function naviTab(el, target){
 
     $(".locationList").children(".wrap").find("article").hide();
     $(el).parent("li").parent(".locationNavi").siblings(".wrap").children(target).show();
-}
-
-// function mapTab(el, target){
-//     $mapTab_dt.removeClass("on");
-//     $(el).parent().addClass("on");
-
-//     $mapTab_dd.hide();
-//     $(target).show();
-// }
- 
+};

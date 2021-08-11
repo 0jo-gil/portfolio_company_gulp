@@ -127,7 +127,6 @@
             return false;
         }else{
             if(txt.legnth < len){
-                // alert("최소 "+len+"글자 이상 입력하세요!");
                 if(!name == "email1"){
                     $("[name="+name+"]").addClass("error");
                 }
@@ -180,20 +179,16 @@
     
             if(i===4){
                 $pwd1.removeClass("error");
-                // $pwd2.removeClass("error");
                 isConfirm = true;
                 return isConfirm;
             }else{
                 $pwd1.addClass("error");
-                // $pwd2.addClass("error");
                 return isConfirm;
             }
     
             
         }else{
-            // alert("두 개의 비밀번호를 동일하게 입력하세요.")
             $pwd1.addClass("error");
-            // $pwd2.addClass("error");
             return isConfirm;
         }
     
@@ -211,20 +206,14 @@
     }
     MyValidation.prototype.isSelect = function(name){
         var sel = $("select[name="+name+"]").children("option:selected").val();
-        var msg = $("select[name="+name+"]").children("option").eq(0).text();
     
         if(sel == ""){
-            // alert(msg);
             $("select[name="+name+"]").addClass("error");
             return false;
         }else{
             $("select[name="+name+"]").removeClass("error");
             return true;
         }
-    }
-    
-    
-    
-    
+    };    
 })(jQuery);
 

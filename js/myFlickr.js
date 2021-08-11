@@ -70,7 +70,6 @@
 
         
         //"#search"
-        // console.log(this.search.selector);
         var btn = $(this.search).children("button");
 
         btn.on("click", function(e){
@@ -247,16 +246,6 @@
                                 ),
                             $("<p class='h'>").text(text)
                         )
-                        
-                
-                    // .append(
-                    //     $("<div class='profile'>")
-                    //         .append(
-                    //             $("<img>").attr({src: "https://www.flickr.com/buddyicons/"+data.owner+".jpg"}),
-                    //             $("<span>").text(data.owner)
-                    //         )                        
-                    // )
-                    
                 )
             )
         }.bind(this));       
@@ -411,9 +400,5 @@
             $('.pop').fadeIn(200);
             $("body").addClass("hidden");
         });
-
-       
-    }
-   
-
+    };
 })(jQuery);

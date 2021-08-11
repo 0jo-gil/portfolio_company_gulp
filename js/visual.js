@@ -56,7 +56,7 @@ $close_btn.on("click", function(e){
 
 });
 
-$main_menu_list.children("a").on("mouseenter", function(){
+$main_menu_list.children("a").on("mouseenter focusin", function(){
     let img_data = $(this).attr("img-data");
 
     if($(".main_menu_pic").length < 1){
@@ -76,7 +76,7 @@ $main_menu_list.children("a").on("mouseenter", function(){
     $(".main_menu_pic").children("img").attr({src: img_data});
 });
 
-$main_menu_list.children("a").on("mouseleave", function(){
+$main_menu_list.children("a").on("mouseleave focusout", function(){
     $(".main_menu_pic").hide();
     $(".main_menu_pic").removeClass("on");
 })

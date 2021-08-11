@@ -1,6 +1,7 @@
 var frame = $(".departmentTab");
-init();
+
 callData();
+
 function callData(){
     $.ajax({
         url: "data/department.json",
@@ -97,43 +98,3 @@ function createList(target, data){
     };
 };
 
-
-frame.find("dt a").on("click focusin", function(e){
-    e.preventDefault();
-
-    var target = $(this).attr("href");
-    var dd_height = $(this).parent().next("dd").outerHeight() + 160;
-
-    frame.find("dt").removeClass("on");
-    $(this).parent().addClass("on");
-    
-    frame.find("dd").hide();
-    $(target).show();
-
-    $(".departmentList").css({height: dd_height});
-});
-
-
-$("textarea[name=message]").on("keypress", function(){
-    $(this).css({color: "#111"});
-});
-
-
-// $(window).resize(function(){
-//     var dd_height = $(".departmentList").find("dd").outerHeight() + 160;
-//     var window_wid = $(this).width();
-//     console.log(window_wid);
-//     if(window_wid < 1179){
-//         $(".departmentList").css({height: dd_height});
-//     }
-// });
-
-function init(){
-    $(window).on("load resize", function(){
-
-        var dd_height = $(".departmentList").find("dd").outerHeight() + 160;
-
-        $(".departmentList").css({height: dd_height});
-    })
-
-}
