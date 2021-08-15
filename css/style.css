@@ -43,10 +43,23 @@ body {
   height: auto;
   overflow: visible;
 }
-body.on {
+body.hidden {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+}
+
+#skipNavi li a {
+  width: 100%;
+  height: 30px;
+  background: navy;
+  position: fixed;
+  top: -30px;
+  left: 0;
+  font: 14px/30px "arial";
+  color: #fff;
+  text-align: center;
+  z-index: 10;
 }
 
 .main_page_tit {
@@ -4924,7 +4937,7 @@ body {
     padding: 0 20px;
   }
   .youtube .inner .video1 .vidGallery .galleryBtn {
-    left: 440px;
+    right: 0px;
   }
   .youtube .inner .youtubeInfo .infoTxt p {
     font-size: 24px;
@@ -5355,11 +5368,6 @@ body {
   }
   .join .inner {
     width: 100%;
-  }
-  .join .inner .joinCheck {
-    padding: 0 20px;
-  }
-  .join .inner .memberJoin {
     padding: 0 20px;
   }
   .join .inner .memberJoin > h1 {
@@ -5468,6 +5476,106 @@ body {
     font: bold 14px/50px "Noto Sans KR", sans-serif;
     color: #fff;
     cursor: pointer;
+  }
+}
+@media screen and (max-width: 539px) {
+  .join {
+    width: 100%;
+  }
+  .join .inner {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .join .inner .join_banner .wrap {
+    padding: 20px;
+  }
+  .join .inner .join_banner .wrap .join_banner_left {
+    width: 100%;
+  }
+  .join .inner .join_banner .wrap .join_banner_left h2 {
+    padding: 0;
+    text-align: center;
+    font-size: 18px;
+  }
+  .join .inner .join_banner .wrap .join_banner_left h2 span {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  .join .inner .join_banner .wrap .join_banner_right {
+    width: 100%;
+    padding: 0;
+    margin-top: 20px;
+  }
+  .join .inner .join_banner .wrap .join_banner_right p {
+    font-size: 14px;
+  }
+  .join .inner .joinCheck h2 {
+    font-size: 18px;
+  }
+  .join .inner .joinCheck p {
+    font-size: 12px;
+  }
+  .join .inner .joinCheck .checkAgree input[type=checkbox] {
+    width: 14px;
+    height: 14px;
+  }
+  .join .inner .joinCheck .checkAgree label span {
+    font-size: 14px;
+  }
+  .join .inner .joinCheck textarea {
+    padding: 20px;
+  }
+  .join .inner .memberJoin > h2 {
+    font-size: 18px;
+  }
+  .join .inner .memberJoin > p {
+    font-size: 12px;
+  }
+  .join .inner .memberJoin table {
+    width: 100%;
+  }
+  .join .inner .memberJoin table tr th {
+    width: 25%;
+    font-size: 14px;
+  }
+  .join .inner .memberJoin table tr td {
+    font-size: 14px;
+    width: 75%;
+  }
+  .join .inner .memberJoin table tr td input[name=userid] {
+    width: 64%;
+  }
+  .join .inner .memberJoin table tr td .confirmId {
+    width: 34%;
+    font-size: 14px;
+  }
+  .join .inner .memberJoin table tr td input[type=password], .join .inner .memberJoin table tr td input[name=username], .join .inner .memberJoin table tr td select[name=email2] {
+    width: 100%;
+  }
+  .join .inner .memberJoin table tr td input[name=email1] {
+    width: 95%;
+  }
+  .join .inner .memberJoin table tr td select[name=company] {
+    width: 20%;
+  }
+  .join .inner .memberJoin table tr td input[name=phone] {
+    width: 78%;
+  }
+  .join .inner .memberJoin .joinInfo2 tr th {
+    width: 25%;
+  }
+  .join .inner .memberJoin .joinInfo2 tr:nth-of-type(2) td label {
+    font-size: 14px;
+  }
+  .join .inner .memberJoin .joinInfo2 tr:nth-of-type(2) td input[name=year], .join .inner .memberJoin .joinInfo2 tr:nth-of-type(2) td select[name=month], .join .inner .memberJoin .joinInfo2 tr:nth-of-type(2) td input[name=day] {
+    width: 29%;
+  }
+  .join .inner .memberJoin .joinInfo2 tr:nth-of-type(3) td label {
+    font-size: 14px;
+  }
+  .join .inner .memberJoin .joinInfo2 tr td .marketingBox > label {
+    font-size: 14px;
   }
 }
 .location .sub_visual {
@@ -6472,17 +6580,16 @@ body {
     width: calc(100% / 4);
     margin-right: 0;
   }
-  .gallery .inner .quickSearch .wrap .quickList ul li a span {
+  .gallery .inner .quickSearch .wrap .quickList ul li a div {
     width: 11vw;
     height: 11vw;
+  }
+  .gallery .inner .quickSearch .wrap .quickList ul li a div span {
     margin: 0 auto;
   }
   .gallery .inner .quickSearch .wrap .quickList ul li a p {
     font-size: 15px;
     margin-top: 10px;
-  }
-  .gallery .inner .quickSearch .wrap .quickList ul li:hover span {
-    background: darkseagreen;
   }
   .gallery .inner .sub_search .pic_search button {
     font-size: 12px;
@@ -6513,9 +6620,12 @@ body {
     font-size: 12px;
     top: auto;
   }
-  .gallery .inner .quickSearch .wrap .quickList ul li a span {
+  .gallery .inner .quickSearch .wrap .quickList ul li a div {
     width: 12vw;
     height: 12vw;
+  }
+  .gallery .inner .quickSearch .wrap .quickList ul li a div span {
+    font-size: 20px;
   }
   .gallery .inner .quickSearch .wrap .quickList ul li a p {
     font-size: 13px;

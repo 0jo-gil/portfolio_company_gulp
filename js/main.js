@@ -1,26 +1,31 @@
-//search toggle
 var $header_hi = $("#header").outerHeight();
+var $btnCall = $(".btnCall");
+var $search_btn = $(".search_btn");
+var $menuMo = $(".menuMo");
+
 var slide_timer;
 
-$(".btnCall").on("click", function(e){
+$btnCall.on("click", function(e){
     e.preventDefault();
-    var isOn = $(this).hasClass("on");
+    menuCall(this);
+});
+
+function menuCall(el){
+    var isOn = $(el).hasClass("on");
     if(!isOn){
-        $(this).addClass("on");
-        $(".menuMo").show(0, function(){
+        $(el).addClass("on");
+        $menuMo.show(0, function(){
             $(this).animate({left: 0}, 500);
         });
     } else {
-        $(this).removeClass("on");
-        $(".menuMo").animate({left: "-100%"}, 500, function(){
+        $(el).removeClass("on");
+        $menuMo.animate({left: "-100%"}, 500, function(){
             $(this).hide();
         });
     };
+};
 
-    
-});
-
-$(".search_btn").on("click", function(e){
+$search_btn.on("click", function(e){
     e.preventDefault();
     var search_wrap_legnth = $(".search_wrap").length;
     $("body").addClass("hidden");
@@ -55,20 +60,19 @@ $("body").on("click", ".search_close", function(e){
 });
 
 
-$(".content_box>.wrap").children("article").on("mouseenter", function(){
-    $(".content_box>.wrap").children("article").css({opacity: 0.3});
-    $(this).css({opacity: 1});
-});
-$(".content_box>.wrap").children("article").on("mouseleave", function(){
-    $(".content_box>.wrap").children("article").css({opacity: 1});
-});
+// $(".content_box>.wrap").children("article").on("mouseenter", function(){
+//     $(".content_box>.wrap").children("article").css({opacity: 0.3});
+//     $(this).css({opacity: 1});
+// });
+// $(".content_box>.wrap").children("article").on("mouseleave", function(){
+//     $(".content_box>.wrap").children("article").css({opacity: 1});
+// });
 
 
 //버튼 클릭시 헤더이동
 var $topBtn = $(".topBtn");
-// var headerPos = $("#header").offset().top;
 
-$(".topBtn").on("click", function(e){
+$topBtn.on("click", function(e){
     e.preventDefault();
 
     moveScreen($topBtn);
@@ -82,23 +86,25 @@ function moveScreen(){
 
 //gnb sub menu 
 
-var gnbSub_hi = $("#gnb").children("li").children("ul").outerHeight();
-var bgGnb_hi = $(".bgGnb").outerHeight();
+var gnbSub_ht = $("#gnb").children("li").children("ul").outerHeight();
+var bgGnb_ht = $(".bgGnb").outerHeight();
 var $menuWeb  = $(".menuWeb");
+var $gnb = $("#gnb");
+var $gnb_li = $gnb.children("li");
 
 $(window).resize(widResize);
 
-$(".menuWeb").on("mouseenter focusin", function(){
+$menuWeb.on("mouseenter focusin", function(){
     openSub();
 });
 
-$(".menuWeb").on("mouseleave focusout", function(){
+$menuWeb.on("mouseleave focusout", function(){
     closeSub();
 
     clearInterval(slide_timer);
 });
 
-$("#gnb").children("li").on("mouseenter", function(){
+$gnb_li.on("mouseenter", function(){
     $(this).addClass("on");
 
     var x = $(this).offset().left;
@@ -112,7 +118,7 @@ $("#gnb").children("li").on("mouseenter", function(){
         
 });
 
-$("#gnb").children("li").eq(0).on("mouseenter", function(){
+$gnb_li.eq(0).on("mouseenter", function(){
     slide_timer = setInterval(dep2_slide, 3000);
 })
 
@@ -124,7 +130,7 @@ function dep2_slide(){
 
 }
 
-$("#gnb").children("li").on("focusin", function(){
+$gnb_li.on("focusin", function(){
 
     var target = $(this).children("a").attr("data-menu");
     createTit();
@@ -133,21 +139,21 @@ $("#gnb").children("li").on("focusin", function(){
 
 });
 
-$("#gnb").children("li").on("mouseleave focusout", function(){
+$gnb_li.on("mouseleave focusout", function(){
     $(this).removeClass("on");
 });
 
-$("#gnb").children("li").on("mouseleave", function(){
+$gnb_li.on("mouseleave", function(){
     $(".gnbBg").css({opacity: 0});
 });
 
-$("#gnb").children("li").on("mouseenter", function(){
+$gnb_li.on("mouseenter", function(){
     $(".gnbBg").css({opacity: 1});
 
 });
 
 function gnbBg(x){
-    var gnb_li_ul_wid = $("#gnb").children("li").children("ul").outerWidth();
+    var gnb_li_ul_wid = $gnb_li.children("ul").outerWidth();
     var isGnbBg = $(".gnbBg").length;
     if(!isGnbBg){
         $("#gnb")
@@ -155,7 +161,7 @@ function gnbBg(x){
                 $("<div class='gnbBg'>")
                     .css({
                         width: gnb_li_ul_wid,
-                        height: gnbSub_hi,
+                        height: gnbSub_ht,
                         position: "fixed",
                         top: $header_hi,
                         left: x,
@@ -190,7 +196,7 @@ function createTit(txt){
                 .css({
                     position: "fixed",
                     width: "100%",
-                    height: gnbSub_hi,
+                    height: gnbSub_ht,
                     top: 117,
                     left: 0,
                     display: "none",
@@ -224,7 +230,7 @@ function openSub(){
                         width: "100%",
                         height: "calc(100vh)",
                         position: "fixed",
-                        top: $header_hi + bgGnb_hi + "px",
+                        top: $header_hi + bgGnb_ht + "px",
                         left: 0,
                         backgroundColor: "rgba(0,0,0,0.8)",
                         display: "none",
@@ -239,7 +245,7 @@ function openSub(){
                 $("<div class='bgGnb'>")
                     .css({
                         width: "100%",
-                        height: gnbSub_hi,
+                        height: gnbSub_ht,
                         position: "fixed",
                         top: $header_hi,
                         left: 0,
@@ -277,9 +283,7 @@ function closeSub(){
     $("#gnb li ul").stop().slideUp(100);
 };
 
-
 // gnb 2depth 
-
 function callBanner(target){
     $.ajax({
         url: target,
@@ -293,5 +297,4 @@ function callBanner(target){
     })
 }
 
-//2depth_slide
 

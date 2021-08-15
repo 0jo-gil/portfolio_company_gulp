@@ -296,22 +296,22 @@
                                 margin-right: 0;
     
                                 a{
-    
-                                    span{
+
+                                    div{
+
                                         width: 11vw;
                                         height: 11vw;
-                                        margin: 0 auto;
+        
+                                        span{
+                                            margin: 0 auto;
+                                        }
+
                                     }
                                     p{
                                         font-size: 15px;
                                         margin-top: 10px;
                                     }
-                                }
-    
-                                &:hover{
-                                    span{
-                                        background: darkseagreen;
-                                    }
+                                
                                 }
                             }
                         }
@@ -393,11 +393,16 @@
                             li{
     
                                 a{
-    
-                                    span{
+
+                                    div{
                                         width: 12vw;
                                         height: 12vw;
+
+                                        span{
+                                            font-size: 20px;
+                                        }
                                     }
+    
                                     p{
                                         font-size: 13px;
                                     }
@@ -405,6 +410,7 @@
                             }
                         }
                     }
+
                 }
             }
     

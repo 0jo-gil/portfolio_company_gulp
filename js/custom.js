@@ -4,6 +4,9 @@ let news_posY = $("#news").offset().top;
 let about_posY = $("#about").offset().top;
 let brand_pic_index = 0;
 
+const $skipNavi = $("#skipNavi");
+const $skipNavi_btn = $skipNavi.find("a");
+
 const $vision = $("#vision");
 const $vision_content_wrap = $vision.find(".vision_content_wrap article");
 
@@ -15,9 +18,29 @@ const $vision_content_pic = $(".vision_content_pic");
 const $content_pic1 = $vision_content_pic.find(".vision_content_pic1");
 const $content_pic2 = $vision_content_pic.find(".vision_content_pic2");
 
+
 let brand_timer;
 let brand_scroll = false;
 let window_wid = $(this).outerWidth();
+
+
+//skipNavi 이벤트
+$skipNavi_btn.on("click", function(e){
+    let target = $(this).attr("href");
+    let posY = $(target).offset().top;
+    e.preventDefault();
+    console.log(target);
+    $("html, body").animate({scrollTop: posY}, 1000);
+});
+
+$skipNavi_btn.on("focusin", function(){
+    $(this).css({top: 0});
+});
+
+$skipNavi_btn.on("focusout", function(){
+    $skipNavi_btn.css({top: -30});
+});
+
 
 //메인페이지 스크롤 모션 
 $(window).scroll(function(){
