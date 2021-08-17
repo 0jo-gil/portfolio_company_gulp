@@ -1,29 +1,4 @@
-/*
-    sudo npm install gulp-cli -g
-    npm install
-    gulp
 
-    주의점 
-    1.main폴더 안쪽에 index.html 생성
-    2.src폴더 안쪽에 style.scss 
-    3.include시 src경로는 무조건 큰따옴표로 감쌈
-    --------------------------
-    처음 npm 인스톨시 에러발생하면 다음과 같이 c드라이브로 이동후 
-    아래 명령어를 실행후 다시 프로젝트 폴더로 돌아와 gulp 실행
-    cd C:\   
-    Set-ExecutionPolicy RemoteSigned
-    cd C:\Users\i\Desktop\my1
-
-    gulp로 빌드시 node-sass가 없다는 오류가 출력되면
-    아래 명령어 실행후 다시 gulp 실행
-    node node_modules/node-sass/scripts/install.js
-
-    es6문법이 인식 안되는 오류해결
-    기존 uglify 모듈을 --->uglify-es로 대체
-    https://www.npmjs.com/package/gulp-uglify-es
-
-    src폴더 packge.js gulpflie.js만 복사해서 써라
-*/
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
@@ -64,12 +39,6 @@ function style(){
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write()) 
 
-    //css파일 압축하는 기능
-    /* 
-    .pipe(uglifycss({    
-        "uglyComments": true
-     }))
-    */
     .pipe(gulp.dest('./dist/css'))   
     .pipe(browserSync.stream());
 }
