@@ -7,9 +7,7 @@ body{
 }
 
 .youtube{
-    // height: 100vh;
     
-
     .inner{
         position: relative;
         width: 1180px;
@@ -251,6 +249,26 @@ body{
 
         .video2{
             width: 100%;
+            margin-bottom: 0;
+
+            .vid_more_btn{
+                display: none;
+                width: 100px;
+                height: 40px;
+                background: #777;
+                color: #fff;
+                text-align: center;
+                font: bold 12px/40px 'Lato';
+                transition: 0.5s;
+                position: absolute;
+                bottom: -60px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                &:hover{
+                    background: #111;
+                }
+            }
 
             .artGallery{
                 width: 100%;
@@ -411,6 +429,11 @@ body{
                     }
                 }
             }
+
+            &.on{
+                overflow: hidden;
+                margin-bottom: 120px;
+            }
         }
 
         
@@ -538,7 +561,10 @@ body{
                 }
             }
 
-            .video2{
+            .video2{         
+                .vid_more_btn{
+                    display: block;
+                }
 
                 .artGallery{
 

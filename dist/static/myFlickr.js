@@ -44,6 +44,7 @@
             type: this.type
         });
 
+
         $(".quickList").children("ul").find("li a").on("click", function(e){
             e.preventDefault();
             var target = $(e.currentTarget).children('p').text();
@@ -54,7 +55,6 @@
         $("body").on("mouseenter", ".item", function(e){
             $(".item").removeClass("on");
             $(e.currentTarget).addClass("on");
-            // $(".viewCursor").stop().fadeIn(100);
         });
 
         $("body").on("mouseleave", ".item", function(){
@@ -183,6 +183,7 @@
             result_opt = {
                 url: this.url_user,
                 dataType: "json",
+                async: false,
                 data: {
                     api_key: this.key,
                     per_page: this.count,
@@ -402,3 +403,4 @@
         });
     };
 })(jQuery);
+

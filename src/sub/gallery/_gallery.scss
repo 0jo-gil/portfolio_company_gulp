@@ -424,12 +424,18 @@
                 }
             }
             .gallery_box{
-    
+
+                &.active{
+                    overflow: hidden;
+                    margin-bottom: 120px;
+                }
+
                 ul{
     
                     li{
                         width: 100%;
-                        height: 500px;
+                        height: 350px;
+
                         .inner{
 
                             .picTxt{
@@ -437,6 +443,9 @@
 
                                 >h1{
                                     font-size: 20px;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 58px;
                                 }
     
                                 >span{
@@ -455,6 +464,25 @@
                             }
                         }
                     }
+                }
+            }
+
+            .gallery_more_btn{
+                display: none;
+                width: 100px;
+                height: 40px;
+                background: #777;
+                color: #fff;
+                text-align: center;
+                font: bold 12px/40px 'Lato';
+                transition: 0.5s;
+                position: absolute;
+                bottom: -60px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                &:hover{
+                    background: #111;
                 }
             }
         }

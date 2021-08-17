@@ -52,6 +52,7 @@
         $.ajax({
             url: "https://www.googleapis.com/youtube/v3/playlistItems",
             dataType: "jsonp",
+            async: false,
             data: {
                 part: "snippet",
                 key: this.key,

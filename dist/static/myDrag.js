@@ -11,9 +11,9 @@
 
     MyDrag.prototype.init = function(el){
         this.$slide = el;
-        this.$slide_inner = this.$slide.find(".news_slider_inner");
-        this.$slide_item = this.$slide_inner.find(".news_slider_item");
-        this.$slide_cursor = this.$slide_inner.find(".news_slider_cursor");
+        this.$slide_inner = this.$slide.find(".slider_inner");
+        this.$slide_item = this.$slide_inner.find(".slider_item");
+        this.$slide_cursor = this.$slide_inner.find(".slider_cursor");
         this.isDown = false;
         this.slide_count = 0;
         this.len = this.$slide_item.length * -1;
@@ -25,10 +25,10 @@
         this.$slide_inner.css({transform: "translateX(0)"});
 
         this.$slide_inner.on("mouseenter", function(e){
-            if($(".news_slider_cursor").length < 1){
+            if($(".slider_cursor").length < 1){
             $(e.currentTarget).parent(this.$slide)
                 .append(
-                    $("<div class='news_slider_cursor'>")
+                    $("<div class='slider_cursor'>")
                         .fadeIn(200)
                         .append(
                             $("<span>").text("CLICK"),
@@ -43,13 +43,13 @@
             e.preventDefault();
             this.dragX = e.pageX;
             $(e.currentTarget).addClass("on");
-            $(".news_slider_cursor").addClass("on");
+            $(".slider_cursor").addClass("on");
         }.bind(this));
 
         this.$slide.on("mouseleave", function(e){
             this.isDown = false;
             $(e.currentTarget).removeClass("on");
-            $(".news_slider_cursor").fadeOut(100, function(){
+            $(".slider_cursor").fadeOut(100, function(){
                 $(this).remove();
             });
         }.bind(this));
@@ -57,7 +57,7 @@
         this.$slide.on("mouseup", function(e){
             this.isDown = false;
             $(e.currentTarget).removeClass("on");
-            $(".news_slider_cursor").removeClass("on");
+            $(".slider_cursor").removeClass("on");
         }.bind(this));
 
         this.$slide.on("mousemove", function(e){
@@ -67,7 +67,7 @@
             let cursorX = e.pageX - this.$slide.offset().left;
             startX = e.pageX;
         
-            $(".news_slider_cursor").css({
+            $(".slider_cursor").css({
                 top: cursorY,
                 left: cursorX
             });
