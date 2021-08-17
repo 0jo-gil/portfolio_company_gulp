@@ -1,0 +1,582 @@
+body{
+    overflow-x: hidden;
+}
+
+.youtube .sub_visual{
+    background-image: url(../img/youtube_main.jpg);
+}
+
+.youtube{
+    // height: 100vh;
+    
+
+    .inner{
+        position: relative;
+        width: 1180px;
+        margin: 0 auto;
+
+        .video1{
+            width: 100%;
+            padding: 60px 0;
+            border-bottom: 1px solid #bbb;
+
+            >h1{
+                display: block;
+                height: 60px;
+                font: 13px/60px 'Jost', sans-serif;
+                color: #bbb;
+                font-weight: 700;
+                position: relative;
+                letter-spacing: 2px;
+                margin-bottom: 30px;
+    
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 30px;
+                    height: 2px;
+                    background: #bbb;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+    
+                }
+            }
+
+            .vidGallery{
+                width: 100%;
+                position: relative;
+
+                .gallery_list{
+                    width: 100%;
+                    overflow: hidden;
+
+                    .wrap{
+                        width: calc(560px * 10);
+                        
+                        article{
+                            width: 500px;
+                            float: left;
+                            margin-right: 60px;
+                
+                            .videoPic{
+                                display: block;
+                                width: 100%;
+                                height: 280px;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                background-size: cover;
+                            }
+
+                            .videoTit{
+                                width: 100%;
+                                padding: 40px 0;
+
+                                h2{
+                                    font: 18px/1.6 'Jost', sans-serif;
+                                    font-weight: 500;
+                                    color: #111;
+                                    margin-bottom: 20px;
+                                }
+
+                                span{
+                                    font: 13px/1 'Jost', sans-serif;
+                                    color: #777;
+                                }
+                            }
+
+                            &:last-of-type{
+                                margin-right: 0;
+                            }
+                
+                        }
+                    }
+                }
+
+                .galleryBtn{
+                    width: 100px;
+                    height: 50px;
+                    position: absolute;
+                    top: -70px;
+                    right: 20px;
+                    font-size: 0;
+
+                    >a{
+                        display: inline-block;
+                        width: 50%;
+                        height: 100%;
+                        background: #333;
+                        font-size: 17px;
+                        line-height: 55px;
+                        color: #fff;
+                        text-align: center;
+                        transition: 0.5s;
+                        position: relative;
+                        border: 1px solid #aaa;
+
+                        .fa-arrow-left, .fa-arrow-right{
+                            position: relative;
+                            top: -1px;
+                        }
+
+                        &:hover{
+                            &:nth-of-type(1){
+                                transform: translateX(-5px);
+                            }
+
+                            &:nth-of-type(2){
+                                transform: translateX(5px);
+                            }
+                        }
+                    }
+                }
+            }
+        
+        }
+
+        .youtubeInfo{
+            width: 100%;
+            padding: 40px 0;
+            position: relative;
+            text-align: center;
+
+         
+
+
+            .infoTxt{
+                width: 100%;
+                position: relative;
+                text-align: center;
+
+                >h1{
+                    display: block;
+                    height: 60px;
+                    font: 13px/60px 'Jost', sans-serif;
+                    color: #bbb;
+                    font-weight: 700;
+                    margin-bottom: 30px;
+                    position: relative;
+                    z-index: 2;
+                    letter-spacing: 2px;
+                    text-align: left;
+        
+                    &::after{
+                        content: '';
+                        display: block;
+                        width: 30px;
+                        height: 2px;
+                        background: #bbb;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+        
+                    }
+                }
+
+                p{
+                    position: relative;
+                    font: 28px/1.4 'Jost', sans-serif;
+                    color: #111;
+                    font-weight: 400;
+                    margin-bottom: 40px;
+                    z-index: 2;
+                }
+
+                
+
+                .mark{
+                    font: 320px/1 'Lily Script One', cursive;
+                    color: #bbb;
+                    opacity: 0.2;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -16%);
+                }
+
+                .sub_btn{
+                    width: 100%;
+                    height: 40px;
+                    text-align: center;
+                    position: relative;
+
+                    >a{
+                        display: block;
+                        width: 140px;
+                        height: 100%;
+                        line-height: 40px;
+                        font-size: 14px;
+                        font-family: 'Jost', sans-serif;
+                        font-weight: 500;
+                        color: #aaa;
+                        transition: 0.5s;
+                        letter-spacing: 1px;
+                        text-align: left;
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%);
+
+                        >span{
+                            display: inline-block;
+                            width: 40px;
+                            height: 100%;
+                            text-align: center;
+                        }
+
+                        &::after{
+                            content: '';
+                            display: block;
+                            width: 40px;
+                            height: 2px;
+                            background: #aaa;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            transition: 0.5s;
+                        }
+
+                        &:hover{
+                            color: #e9967a;
+                        
+                            &::after{
+                                width: 100%;
+                                background: #e9967a;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .video2{
+            width: 100%;
+
+            .artGallery{
+                width: 100%;
+
+                .wrap{
+                    width: 100%;
+                    
+                    article{
+                        width: calc(100% / 2 - 10px);
+                        float: left;
+                        margin: 20px 0;
+                        margin-right: 20px;
+                        position:  relative;
+
+                        &:nth-of-type(even){
+                            margin-right: 0;
+                        }
+
+                        .videoPic{
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+
+                            .pic{
+                                width: 100%;
+                                height: 325px;
+                                overflow: hidden;
+                                position: relative;
+                                transition: 0.5s;
+
+                                >img{
+                                    display: block;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-position: center;
+                                    background-size: cover;
+                                    transform: scale(1);
+                                    transition: 0.5s;
+                                    position: relative;
+                                }
+
+                                &::after{
+                                    content: '';
+                                    display: block;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: #000;
+                                    opacity: 0;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                }
+                            }
+    
+                            .con{
+                                width: 100%;
+                                padding: 20px;
+                                position: relative;
+                                transition: 0.5s;
+    
+                                h2{
+                                    font: 18px/1.2 'Jost', sans-serif;
+                                    color: #111;
+                                    font-weight: 500;
+                                    margin-bottom: 20px;
+                                    transition: 0.5s;
+                                }
+    
+                                p{
+                                    font: 15px /1.3 'Jost', sans-serif;
+                                    color: #777;
+                                    margin-bottom: 30px;
+                                    transition: 0.5s;
+                                }
+    
+                                span{
+                                    font: 13px/1 'Jost', sans-serif;
+                                    color: #777;
+                                    transition: 0.5s;
+                                }
+                            }
+
+                            .viewBtn{
+                                display: none;
+                                width: 50px;
+                                height: 50px;
+                                background: #000;
+                                position: absolute;
+                                bottom: 60px;
+                                left: 50%;
+                                margin-left: -25px;
+    
+                                &::before{
+                                    content: '';
+                                    display: block;
+                                    width: 2px;
+                                    height: 60%;
+                                    background: #fff;
+                                    position: absolute;
+                                    margin-top: 20%;
+                                    top: 0;
+                                    left: 50%;
+                                    margin-left: -1px;
+                                    transition: 0.5s;
+                                }
+    
+                                &::after{
+                                    content: '';
+                                    display: block;
+                                    width: 60%;
+                                    height: 2px;
+                                    background: #fff;
+                                    position: absolute;
+                                    margin-top: -1px;
+                                    top: 50%;
+                                    margin-left: 20%;
+                                    transition: 0.5s;
+                                }
+
+                              
+                            }
+                        }
+
+                     
+
+                        &:hover{
+
+                            .videoPic{
+                            
+                                .pic::after{
+                                    opacity: 0.2;
+                                }
+
+                                img{
+                                    transform: scale(1.05);
+
+                                    
+                                }
+
+                                .con{
+                                    transform: translateY(-110%);
+                                    h2{
+                                        color: #fff;
+                                    }
+
+                                    p, span{
+                                        color: #eee;
+                                    }
+                                }
+
+                                .viewBtn::before, .viewBtn::after{
+                                    transform: rotate(360deg);
+                            } 
+                            }
+                        }
+                       
+                    }
+                }
+            }
+        }
+
+        
+    }
+   
+}
+
+
+//tablet layout
+@media screen and (max-width: 1179px){
+    
+    .youtube{
+        
+
+        .inner{
+            width: 100%;
+            padding: 0 20px;
+
+            .video1{
+    
+                .vidGallery{
+                    .galleryBtn{
+                        right: 0px;
+                    }
+                
+                }
+            
+            }
+
+            .youtubeInfo{
+
+                .infoTxt{
+
+                    p{
+                        font-size: 24px;
+                    }
+
+                    .sub_btn{
+
+                        >a{
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+
+            .video2{
+
+                .artGallery{
+
+                    .wrap{
+                        
+                        article{
+
+                            .videoLink{
+
+                                .con{                               
+        
+                                    h2{
+                                    font-size: 16px;
+                                    }
+        
+                                    p{
+                                        font-size: 14px;
+                                        margin-bottom: 20px;
+                                    }
+        
+                                    span{
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//mobile layout
+@media screen and (max-width: 539px){
+    
+    .youtube{
+
+        .inner{
+            padding: 0 30px;
+
+            .video1{
+    
+                .vidGallery{
+                    .gallery_list{
+                        .wrap{
+                            article{
+                                width: calc(100% / 10);
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                    .galleryBtn{
+                        top: -50px;
+                        left: auto;
+                        right: 0;
+                        background: transparent;
+                    }
+                }
+            
+            }
+
+            .youtubeInfo{
+
+                .infoTxt{
+
+                    p{
+                        font-size: 20px;
+                    }
+
+                    .sub_btn{
+
+                        >a{
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+
+            .video2{
+
+                .artGallery{
+
+                    .wrap{
+                        
+                        article{
+                            width: 100%;
+
+                            .videoLink{
+
+                                .con{                               
+        
+                                    h2{
+                                    font-size: 16px;
+                                    }
+        
+                                    p{
+                                        font-size: 14px;
+                                    }
+        
+                                    span{
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+
+                            &:hover{
+                                .videoLink{
+
+                                    .con{
+                                        transform: translateY(-120%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

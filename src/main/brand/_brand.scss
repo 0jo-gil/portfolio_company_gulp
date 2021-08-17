@@ -1,0 +1,328 @@
+#brand{
+    width: 100%;
+    height: 100vh;
+    padding: 80px 0;
+    position: relative;
+
+  
+
+    .inner{
+        width: 1180px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+
+        .wrap{
+            width: 100%;
+            height: 100%;
+
+            .brand_box_left{
+                width: 50%;
+                height: 100%;
+                float: left;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .brand_box_content{
+                    width: 90%;
+                    height: 80%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-content: space-between;
+
+                    article{
+                        width: 49%;
+                        height: calc((100% / 3) - 2%);
+                        padding: 20px;
+                        position: relative;
+                        overflow: hidden;
+                        box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+                        transform: translateX(50%);
+                        opacity: 0;
+                        transition: transform 0.5s, opacity 0.5s;
+                        cursor: pointer;
+
+                        &:nth-of-type(1){
+                            transition-delay: 0s;
+                        }
+                        &:nth-of-type(2){
+                            transition-delay: 0.1s;
+                        }
+                        &:nth-of-type(3){
+                            transition-delay: 0.2s;
+                        }
+                        &:nth-of-type(4){
+                            transition-delay: 0.3s;
+                        }
+                        &:nth-of-type(5){
+                            transition-delay: 0.4s;
+                        }
+                        &:nth-of-type(6){
+                            transition-delay: 0.5s;
+                        }
+
+                        &::before{
+                            content: '';
+                            display: block;
+                            width: 20%;
+                            height: 100%;
+                            background: #fff;
+                            opacity: 0.3;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index:2;
+                        }
+
+                        &::after{
+                            content: '# HOVER';
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            background: #fff;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: 3;
+                            transition: 0.5s;
+                            font: 10px/1 'Lato';
+                            color: #999;
+                            padding: 20px;
+                            box-sizing: border-box;
+                        }
+
+                        img{
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            object-fit: cover;
+                            object-position: center;
+                            z-index:1;
+                        }
+
+                        span{
+                            display: block;
+                            text-align: right;
+                            font: bold 14px/1 'Lato';
+                            color: #333;
+                            position: relative;
+                            z-index: 4;
+                            transition: 0.3s 0.2s;
+                        }
+
+                        h2{
+                            position: absolute;
+                            bottom: 20px;
+                            left: 20px;
+                            font: bold 18px/1 'Lato';
+                            color: #111;
+                            z-index: 4;
+                            transition: 0.3s 0.2s;
+                        }
+
+                        &:hover{
+                            box-shadow: none;
+
+                            &::after{
+                                left: -100%;
+                            }
+
+                            span{
+                                color: #eee;
+                            }
+
+                            h2{
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+
+            .brand_box_right{
+                width: 50%;
+                height: 100%;
+                float: right;
+                padding: 100px 60px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                h1{
+                    font: bold 26px/1.6 'Lato';
+                    color: #111;
+                    margin-bottom: 40px;
+
+                    span{
+                        display: block;
+                        font-size: 12px;
+                        margin-bottom: 5px;
+                    }
+                }
+
+                p{
+                    font: 14px/1.6 'Lato';
+                    color: #aaa;
+                    margin-bottom: 60px;
+                }
+
+                a{
+                    display: inline-block;
+                    width: 120px;
+                    height: 40px;
+                    font: bold 12px/40px 'Lato';
+                    color: #111;
+                    text-align: center;
+                    overflow: hidden;
+                    position: relative;
+
+                    &::before{
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        height: 1px;
+                        background: #aaa;
+                        position: absolute;
+                        bottom: 0;
+                        left: -100%;
+                        transition: 0.5s;
+                    }
+
+                    &:hover{
+
+                        &::before{
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    &.on{
+
+        .inner{
+            .wrap{
+                .brand_box_left{
+                    .brand_box_content{
+                        article{
+                            transform: translateX(0);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//tablet
+@media screen and (max-width: $tablet){
+    #brand{
+    
+        .inner{
+            width: 100%;
+            padding: 0 20px;
+    
+            .wrap{
+    
+                .brand_box_left{
+    
+                    .brand_box_content{
+                        width: 95%;
+    
+                        article{
+                            padding: 15px;
+    
+                            h2{
+                                left: 15px;
+                                font: bold 15px/1.4 'Lato';
+                            }
+                        }
+                    }
+    
+    
+                }
+    
+                .brand_box_right{
+                    padding: 100px 0px;
+                    padding-left: 30px;
+
+                    h1{
+                        font: bold 24px/1.4 'Lato';
+                        margin-bottom: 30px;
+                    }
+    
+                    p{
+                        font: 13px/1.4 'Lato';
+                        margin-bottom: 40px;
+                    }
+                }
+            }
+    
+        }
+    }
+}
+
+//mobile
+@media screen and (max-width: $mobile){
+    #brand{
+        height: auto;
+        padding: 60px 0;
+
+        .inner{
+    
+            .wrap{
+                display: flex;
+                flex-wrap: wrap;
+    
+                .brand_box_left{
+                    width: 100%;
+                    order: 2;
+    
+                    .brand_box_content{
+                        width: 100%;
+    
+                        article{
+                            height: 180px;
+                            padding: 15px;
+                            margin-bottom: 15px;
+    
+                            h2{
+                                left: 15px;
+                                font: bold 15px/1.4 'Lato';
+                            }
+                        }
+                    }
+    
+    
+                }
+    
+                .brand_box_right{
+                    width: 100%;
+                    padding: 20px 0;
+                    order: 1;
+
+                    h1{
+                        font: bold 24px/1.4 'Lato';
+                        margin-bottom: 20px;
+                    }
+    
+                    p{
+                        font-size: 12px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+    
+        }
+    }
+}

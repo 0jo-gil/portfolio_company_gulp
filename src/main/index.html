@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MAIN</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/8fb19dd542.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="static/myDrag.js"></script>
+    <script src="static/myToggle.js"></script>
+    <script defer src="static/visual.js"></script>
+    <script defer src="static/main.js"></script>
+    <script>
+        //tab menu 
+        $(document).ready(function(){
+            $(".news_slide1").myDrag();
+            $(".news_slide2").myDrag();
+            $(".news_slide3").myDrag();
+            $(".news_slide4").myDrag();
+            $(".news_slide5").myDrag();
+
+            $(".main_contact_faq").children("dl").myToggle({
+                btn: "dt",
+                boxes: "dd",
+                active: "on"
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="skipNavi">
+        <li><a href="#vision">본문내용 바로가기</a></li>
+        <li><a href="#footer">하단메뉴 바로가기</a></li>
+    </ul>
+
+    <include src="main_header/main_header.html"></include>
+    <include src="visual/visual.html"></include>
+    <include src="vision/vision.html"></include>
+    <include src="about/about.html"></include>
+    <include src="brand/brand.html"></include>
+    <include src="banner/banner.html"></include>
+    <include src="news/news.html"></include>
+    <include src="main_contact/main_contact.html"></include>
+    <include src="footer/footer.html"></include>
+    
+</body>
+</html>

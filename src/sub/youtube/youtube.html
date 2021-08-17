@@ -1,0 +1,83 @@
+<include src="../header/header.html"></include>
+
+<section class="content youtube">
+    <div class="sub_visual">
+        <h1>
+            YOUTUBE /
+            <span>유튜브</span>
+        </h1>
+    </div>
+    <div class="inner">
+        <div class="video1">
+            <h1>COLLECTION</h1>
+           
+            <div class="vidGallery">            
+                <div class="gallery_list">
+                    <div class="wrap">
+                        
+                    </div>
+                </div>
+                
+                <div class="galleryBtn">
+                    <a href="#" class="prevBtn">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="#" class="nextBtn">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="youtubeInfo">
+            <div class="infoTxt">
+                <h1>OUR ARCHIVES</h1>
+                <p>
+                    Do you want our youtube infomaitons? And you just want to show with us.<br>
+                    We are always up for a conversation!
+                </p>
+                <span class="mark">"</span>
+                <div class="sub_btn">
+                    <a href="#">
+                        <span>
+                            <i class="fas fa-chevron-right"></i>
+                        </span>SUBSCRIBE
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="video2">
+            <div class="artGallery">
+                <div class="wrap">
+                    
+                </div>
+            </div>
+        </div>
+
+    
+        
+
+    </div>
+</section>
+
+<script src="static/myyoutube.js"></script>
+<script src="js/sub/youtube/youtube.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".vidGallery .gallery_list .wrap").MyYoutube({
+            type: "playlist",
+            key : "AIzaSyDQnEmKhqzQKaQwtZ6KHu9_szVRtmJjDgg",
+            playList : 'PLh1ZBMxUOR2FehwZCLlVuhwOqpbyCGtKZ'
+            // text: $(".videoTit")
+        });
+        $(".artGallery .wrap").MyYoutube({
+            type: "art",
+            key : "AIzaSyDQnEmKhqzQKaQwtZ6KHu9_szVRtmJjDgg",
+            playList : "PLh1ZBMxUOR2Gl_y9fG-2Dur9T7EGz987K", 
+            count: 10
+        });
+    });
+</script>
+
+<include src="../footer/footer.html"></include>

@@ -1,0 +1,193 @@
+#main_header{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 12;
+
+
+    .main_menu_mo{
+        display: block;
+        width: 60px;
+        height: 15px;
+        overflow: hidden;
+        position: relative;
+        z-index: 8;
+
+        span{
+            display: block;
+            width: 100%;
+            height: 100%;
+            font: bold 15px/1 'Lato';
+            color: #111;
+            transition: 0.5s;
+            position: absolute;
+            left: 0;
+
+            &.main_menu_btn{
+                top: 0%;
+            }
+
+            &.main_close_btn{
+                top: 100%;
+            }
+        }
+
+        &:hover{
+
+            span{
+                color: #999;
+            }
+            
+        }
+
+        &.on{
+
+            .main_menu_btn{
+                top: -100%;
+            }
+            .main_close_btn{
+                top: 0%;
+            }
+        }
+    }
+
+
+    .main_menu{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        background: #fff;
+        z-index: 7;
+        transition: 1s;
+        padding: 100px 40px 60px 40px;
+
+        #main_gnb{
+            height: 100%;
+
+            >li{
+                display: block;
+                margin-bottom: 40px;
+
+                >a{
+                    display: inline-block;
+                    position: relative;
+                    overflow: hidden;
+                    
+                    >span{
+                        font: bold 50px/1 'Lato';
+                        color: #111;
+                        transform: translateY(101%);
+                        opacity: 0;
+                        transition: 0.3s;
+                    }
+
+                    &::after{
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        height: 5px;
+                        background: #111;
+                        position: absolute;
+                        top: 50%;
+                        margin-top: -2.5px;
+                        left: -100%;
+                        transition: 0.5s;
+                    }
+
+                    &:hover{
+
+                        &::after{
+                            left: 0;
+                        }
+
+                        span{
+                            font-style: italic;
+                        }
+                    }
+                }
+
+                &.on{
+                    a {
+                        span{
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        .main_menu_info{
+            position: absolute;
+            bottom: 110px;
+            right: 40px;
+            text-align: right;
+
+            address{
+                font: 14px/1 'Lato';
+                color: #aaa;
+                font-style: normal;
+            }
+
+            p{
+                font: 14px/1 'Lato';
+                color: #aaa;
+                margin-top: 10px;
+            }
+        }
+        .main_menu_sns{
+            position: absolute;
+            bottom: 80px;
+            right: 40px;
+            font-size: 0;
+
+            >li{
+                display: inline-block;
+
+                a{
+                    display: block;
+                    padding: 0 10px;
+
+                    span{
+                        display: block;
+                        width: 14px;
+                        height: 14px;
+                        font-size: 14px;
+                        color: #aaa;
+                    }
+                }
+            }
+        }
+
+        .main_menu_pic{
+            width: 20vw;
+            height: 30vw;
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            margin-left: -10vw;
+            margin-top: -15vw;
+            overflow: hidden;
+
+            img{
+                width: 100%;
+                height: 100%;
+                transition: 0.5s;
+                transform: translateX(-100%);
+                object-fit: cover;
+            }
+
+            &.on{
+                img{
+                    transform: translateX(0%);
+                }
+            }
+        }
+    
+        &.on{
+            bottom: 0;
+        }
+    }
+}

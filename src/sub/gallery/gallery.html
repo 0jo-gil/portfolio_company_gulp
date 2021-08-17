@@ -1,0 +1,104 @@
+<include src="../header/header.html"></include>
+
+<section class="content gallery">
+
+    <div class="sub_visual">
+        <h1>
+            GALLERY /
+            <span>갤러리</span>
+        </h1>
+    </div>
+
+    <div class="inner">
+        <div class="quickSearch">
+            <div class="wrap">
+                <div class="innerTxt">
+                    <h1>Quick Search</h1>
+                    <p>원하는 카테고리를 눌러 검색해보세요.</p>
+                </div>
+                <div class="quickList">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <span>
+                                        <i class="fas fa-archive"></i>
+                                    </span>
+                                </div>
+                                <p>Archives</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <span>
+                                        <i class="fas fa-adjust"></i>
+                                    </span>
+                                </div>
+                                <p>Interest</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <span>
+                                        <i class="fas fa-layer-group"></i>
+                                    </span>
+                                </div>
+                                <p>Developer</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <span>
+                                        <i class="fab fa-quinscape"></i>
+                                    </span>
+                                </div>
+                                <p>UI</p>
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="sub_search">
+            <form action="/">
+                <legend class="h">갤러리 검색창입니다.</legend>
+                <div class="search2 pic_search">
+                    <select name="selectSearch" id="selectSearch">
+                        <option value="">제목</option>
+                        <option value="">내용</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요.">
+                    <button type="submit">
+                        SEARCH
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="gallery_box">
+
+        </div>
+    </div>
+</section>
+
+<script src="static/isotope.pkgd.min.js"></script>
+<script src="static/myFlickr.js"></script>
+<script>
+        $(document).ready(function(){
+            $(".content .inner").myFlickr({
+                key: "5e916955f19a6bf9fd27b726635445fc",
+                gallery: ".gallery_box",
+                search: ".pic_search",
+                count: 20,
+                enableIso: true,
+                user: "192991255@N08",
+                type: "user"
+            });
+        });
+</script>
+
+<include src="../footer/footer.html"></include>

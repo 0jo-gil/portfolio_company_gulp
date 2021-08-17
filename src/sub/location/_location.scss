@@ -1,0 +1,998 @@
+.location .sub_visual{
+    background-image: url(../img/location_main.jpg);
+}
+
+.location{
+    
+    .inner{
+        width: 1180px;
+        margin: 0 auto;
+
+        >h1{
+            display: block;
+            height: 60px;
+            font: 13px/60px 'Jost', sans-serif;
+            color: #bbb;
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            letter-spacing: 2px;
+            text-align: left;
+            z-index: 2;
+
+
+            &::after{
+                content: '';
+                display: block;
+                width: 30px;
+                height: 2px;
+                background: #bbb;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+
+            }
+        }
+
+        .map_wrap{
+            width: 100%;
+            height: 700px;
+            margin-bottom: 1600px;
+            position: relative;
+
+            &::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+
+            #map{
+                width: 75%;
+                height: 100%;
+                margin-bottom: 40px;
+                float: left;
+                filter: grayscale(40%);
+            }
+
+            .mapBox{
+                width: 25%;
+                height: 100%;
+                z-index: 5;
+                float: right;
+                // border: 1px solid #aaa;
+
+                .branch{
+                    width: 100%;
+                    height: 100%;
+                    background: #edebe7;
+
+                    li{
+                        width: 100%;
+                        height: calc(100% / 3);
+                        padding: 40px;
+                        padding-left: 60px;
+                        position: relative;
+                        border-bottom: 1px solid #aaa;
+
+                        @for $i from 1 through 3{
+                            &:nth-of-type(#{$i})::before{
+                                content: "#{$i}";
+                            }
+                        }
+
+                        &::before{
+                            display: block;
+                            width: 20px;
+                            height: 20px;
+                            background: #444;
+                            font: 13px/20px 'Jost', sans-serif;
+                            color: #fff;
+                            text-align: center;
+                            border-radius: 50%;
+                            position: absolute;
+                            top: 40px;
+                            left: 30px;
+                        }
+
+
+                        a{
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+                            
+                            .marker1{
+                                display: inline-block;
+                                width: 20px;
+                                height: 24.5px;
+                                background-image: url(../img/marker1.png);
+                                background-size: cover;
+                                margin-right: 5px;
+                                position: absolute;
+                                left: -30px;
+                                top: -5px;
+                            }
+                            .marker2{
+                                display: inline-block;
+                                width: 20px;
+                                height: 24.5px;
+                                background-image: url(../img/marker2.png);
+                                background-size: cover;
+                                margin-right: 5px;
+                                position: absolute;
+                                left: -30px;
+                                top: -5px;
+                            }
+                            .marker3{
+                                display: inline-block;
+                                width: 20px;
+                                height: 24.5px;
+                                background-image: url(../img/marker3.png);
+                                background-size: cover;
+                                margin-right: 5px;
+                                position: absolute;
+                                left: -30px;
+                                top: -5px;
+                            }
+
+                            p{
+                                font: bold 15px/1 'Noto Sans KR', sans-serif;
+                                color:#333;
+                                margin-bottom: 20px;
+                            }
+
+                            strong{
+                                display: block;
+                                font: normal 12px/1.6 'Noto Sans KR', sans-serif;
+                                color: #999;
+                            }
+
+                            .phoneNum{
+                                margin-top: 20px;
+                                display: block;
+                                font: 12px/1 'arial';
+                                color: #999;
+                            }
+
+                            .branch_email{
+                                margin-top: 10px;
+                                display: block;
+                                font: 12px/1 'arial';
+                                color: #999;
+                            }
+
+                            img{
+                                width: 60px;
+                                height: 60px;
+                                position: absolute;
+                                top: 0px;
+                                right: 0px;
+                            }
+                        }
+
+                        &:last-of-type{
+                            margin-bottom: 0;
+                            border-bottom: none;
+                        }
+
+                      
+             
+                    }
+
+                    .branch_info{
+                        position: absolute;
+                        width: 1180px;
+                        left: 0;
+                        top: 700px;
+                        padding: 40px 0;
+                        display: none;
+
+                        >h2{
+                            display: block;
+                            height: 60px;
+                            font: 13px/60px 'Jost', sans-serif;
+                            color: #bbb;
+                            font-weight: 700;
+                            position: relative;
+                            letter-spacing: 2px;
+                            text-align: left;
+                            z-index: 2;
+                
+                
+                            &::after{
+                                content: '';
+                                display: block;
+                                width: 30px;
+                                height: 2px;
+                                background: #bbb;
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
+                
+                            }
+                        }
+
+                        .wrap{
+                            width: 100%;
+                            margin-bottom: 80px;
+
+                            article{
+                                height: 100%;
+                                float: left;
+
+                                &.event_txt{
+                                    width: 60%;
+                                    padding: 0 60px 0 20px;
+
+                                    .event_tit{
+                                        width: 100%;
+    
+                                        >p{
+                                            font: 16px/1 'Jost', sans-serif;
+                                            color: #999;
+                                            margin-bottom: 10px;
+                                        }
+                                        >span{
+                                            font: 14px/1 'Jost', sans-serif;
+                                            color: #444;
+                                        }
+                                        h3{
+                                            font: 25px/1.6 'Jost', sans-serif;
+                                            font-weight: 700;
+                                            color: #111;
+                                            margin-top: 20px;
+                                        }
+    
+                                    }
+    
+                                    .event_inner_txt{
+                                        width: 100%;
+                                        margin-top: 40px;
+                                        p{
+                                            font: 15px/1.6 'Jost', sans-serif;
+                                            color: #111;
+                                            margin-bottom: 40px;
+                                        }
+                                        a{
+                                            display: block;
+                                            width: 160px;
+                                            height: 40px;
+                                            background: #444;
+                                            border: 1px solid #111;
+                                            font: 15px/40px 'Jost', sans-serif;
+                                            color: #fff;
+                                            text-align: center;
+                                            letter-spacing: 1px;
+                                        }
+                                    }
+                                }
+
+                                &.event_pic{
+                                    width: 40%;
+                                    
+                                    .event_inner_pic{
+                                        width: 80%;
+                                        height: 280px;
+                                        background: url(../img/event1.jpg) no-repeat center/cover;
+                                    }
+                                }
+                                
+                            }
+                        }
+
+                        .branch_info_des{
+                            width: 100%;
+                            padding: 40px 0;
+                            border-top: 1px solid #111;
+                            border-bottom: 1px solid #111;
+ 
+                            >.branch_info_con{
+                                width: 100%;
+
+
+                                &::after{
+                                    content: '';
+                                    display: block;
+                                    clear: both;
+                                }
+                                
+                                >dt{
+                                    width: 25%;
+                                    height: 100px;
+                                    float: left;
+                                    padding-left: 20px;
+                                    
+                                    h3{
+                                        font: bold 18px/1 'Noto Sans', sans-serif;
+                                        color: #111;
+                                        position: relative;
+                                        padding-top: 10px;
+
+                                        &::after{
+                                            content: '';
+                                            display: block;
+                                            width: 15px;
+                                            height: 2px;
+                                            background: rgb(235, 106, 93);;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                        }
+                                    }
+                                }
+
+                                >dd{
+                                    width: 75%;
+                                    float: right;
+                                    // padding: 40px 0;
+                                    border-top: 1px solid #aaa;
+                                    border-bottom: 1px solid #aaa;
+
+                                    .txt_table{
+                                        width: 100%;
+                                        padding: 40px 0;
+                                        border-bottom: 1px solid #aaa;
+
+                                        &::after{
+                                            content: '';
+                                            display: block;
+                                            clear: both;
+                                        }
+
+                                        .left_txt{
+                                            width: 15%;
+                                            float: left;
+
+                                            >p{
+                                                font: bold 14px/1 'Noto Sans', sans-serif;
+                                                color: #304d78;
+                                            }
+                                        }
+
+                                        .right_txt{
+                                            width: 85%;
+                                            float: right;
+                                            position: relative;
+
+                                            >p{
+                                                font: 14px/1 'Noto Sans', sans-serif;
+                                                color: #111;
+                                                margin-bottom: 20px;
+
+                                                >span{
+                                                    display: inline-block;
+                                                    width: 16px;
+                                                    height: 16px;
+                                                    border-radius: 50%;
+                                                    background: #aaa;
+                                                    font-size: 12px;
+                                                    line-height: 18px;
+                                                    text-align: center;
+                                                    color: #fff;
+                                                    position: relative;
+                                                    top: -1px;
+                                                    margin-right: 5px;
+                                                }
+                                            }
+
+                                        }
+
+                                        &:last-of-type{
+                                            border: none;
+                                        }
+                                    }
+                                    
+                                }
+
+                                &:nth-of-type(2){
+
+                                    >dd{
+                                        border-top: none;
+                                    }
+                                }
+                                &:nth-of-type(3){
+
+                                    >dd{
+                                        border-top: none;
+                                    }
+                                }
+                            }
+                        }
+
+                        &:nth-of-type(1){
+                            display: block;
+                        }
+
+                        &:nth-of-type(2){
+                          
+                            .wrap{
+                                .event_pic{
+                                    .event_inner_pic{
+                                        background: url(../img/event2.jpg) no-repeat center/cover;
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-of-type(3){
+                          
+                            .wrap{
+                                .event_pic{
+                                    .event_inner_pic{
+                                        background: url(../img/event3.jpg) no-repeat center/cover;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+  
+        .location_info{
+            width: 100%;
+            height: 100vh;
+
+            >.location_tab{
+                width: 100%;
+                position: relative;
+
+                >dt{
+                    width: calc(100% / 3);
+                    height: 50px;
+                    border: 1px solid #aaa;
+                    position: absolute;
+                    top: 0;
+
+                    &:nth-of-type(1){
+                        left: 0;
+                    }
+                    &:nth-of-type(2){
+                        left: calc(100% / 3 * 1);
+                        margin-left: -1px;
+                    }
+                    &:nth-of-type(3){
+                        left: calc(100% / 3 * 2);
+                        margin-left: -2px;
+                    }
+
+                    >a{
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        font: 16px/50px 'Noto Sans', sans-serif;
+                        text-align: center;
+                        color: #111;
+                    }
+
+                    &.on{
+                        background: #333;
+
+                        >a{
+                            color: #fff;
+                        }
+                    }
+                }
+
+                >dd{
+                    width: 100%;
+                    padding: 40px 0 40px 20px;
+                    position: absolute;
+                    top: 90px;
+                    display: none;
+                    border-top: 1px solid #aaa;
+                    border-bottom: 1px solid #aaa;
+                    // border: 1px solid #aaa;
+
+                    &:nth-of-type(1){
+                        display: block;
+                    }
+
+                    >.tab_list_con{
+                        width: 100%;
+
+
+                        &::after{
+                            content: '';
+                            display: block;
+                            clear: both;
+                        }
+                        
+                        >dt{
+                            width: 25%;
+                            height: 100px;
+                            float: left;
+                            
+                            h3{
+                                font: bold 18px/1 'Noto Sans', sans-serif;
+                                color: #111;
+                                position: relative;
+                                padding-top: 10px;
+
+                                &::after{
+                                    content: '';
+                                    display: block;
+                                    width: 15px;
+                                    height: 2px;
+                                    background: rgb(235, 106, 93);;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                }
+                            }
+                        }
+
+                        >dd{
+                            width: 75%;
+                            float: right;
+                            // padding: 40px 0;
+                            border-top: 1px solid #111;
+                            border-bottom: 1px solid #111;
+
+                            .txt_table{
+                                width: 100%;
+                                padding: 40px 0;
+                                border-bottom: 1px solid #aaa;
+
+                                &::after{
+                                    content: '';
+                                    display: block;
+                                    clear: both;
+                                }
+
+                                .left_txt{
+                                    width: 15%;
+                                    float: left;
+
+                                    >p{
+                                        font: bold 14px/1 'Noto Sans', sans-serif;
+                                        color: #304d78;
+                                    }
+                                }
+
+                                .right_txt{
+                                    width: 85%;
+                                    float: right;
+                                    position: relative;
+
+                                    >p{
+                                        font: 14px/1 'Noto Sans', sans-serif;
+                                        color: #111;
+                                        margin-bottom: 20px;
+
+                                        >span{
+                                            display: inline-block;
+                                            width: 16px;
+                                            height: 16px;
+                                            border-radius: 50%;
+                                            background: #aaa;
+                                            font-size: 12px;
+                                            line-height: 18px;
+                                            text-align: center;
+                                            color: #fff;
+                                            position: relative;
+                                            top: -1px;
+                                            margin-right: 5px;
+                                        }
+                                    }
+
+                                }
+
+                                &:last-of-type{
+                                    border: none;
+                                }
+                            }
+                            
+                        }
+
+                        &:nth-of-type(2){
+
+                            >dd{
+                                border-top: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .locationNavi{
+            width: 100%;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+
+            li{
+                display: inline-block;
+
+                a{
+                    display: block;
+                    height: 40px;
+                    padding: 0 20px;
+                    font: 14px/40px 'Jost', sans-serif;
+                    font-weight: 500;
+                    color: #111;
+                    position: relative;
+
+                    &::after{
+                        content: "";
+                        display: block;
+                        width: 0%;
+                        height: 2px;
+                        background: rgb(235, 106, 93);
+                        position: absolute;
+                        bottom: 5px;
+                        left: 50%;
+                        transition: 0.5s;
+                        transform: translateX(-50%);
+                    }
+
+                    &:hover::after{
+                        width: 40%;
+                    }
+                }
+
+                &.on{
+                    a::after{
+                        width: 40%;
+                    }
+                }
+            }
+        }
+
+
+
+        .locationList{
+            width: 100%;
+            margin-bottom: 60px;
+
+            .wrap{
+
+                article{
+                    width: calc(100% / 3);
+                    float: left;
+                    padding: 10px;
+
+                    &:nth-of-type(3),  &:nth-of-type(6),  &:nth-of-type(6){
+                        margin-right: 0;
+                    }
+
+                    .mainTxt{
+                        border: 1px solid #aaa;
+
+                        .locationHead{
+                            padding: 10px;
+                            border-bottom: 1px solid #aaa;
+
+                            >p{
+                                font: 14px/1 'Jost', sans-serif;
+                                color: #aaa;
+                            }
+                        }
+
+                       
+
+                        .locationTxt{
+                            padding: 20px 10px;
+
+                            >p{
+                                font: 14px/1 'Jost', sans-serif;
+                                font-weight: 600;
+                                color: #111;
+                                margin-bottom: 15px;
+                            }
+                            >span{
+                                display: block;
+                                font: 14px/1.6 'Jost', sans-serif;
+                                color: #333;
+                                margin-bottom: 10px;
+                            }
+                            strong{
+                                font: 14px/1 'Jost', sans-serif;
+                                color: #aaa;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+//tablet layout
+@media screen and (max-width: 1179px){
+    .location{
+
+        .inner{
+            width: 100%;
+            padding: 0 20px;
+    
+            .map_wrap{
+                width: 100%;
+                height: 500px;
+                margin-bottom: 1800px;
+    
+                #map{
+                    width: 100%;
+                    height: 100%;
+                    margin-bottom: 20px;
+                }
+    
+                .mapBox{
+                    width: 100%;
+                    height: 50px;
+                    z-index: 5;
+                    float: right;
+    
+                    .branch{
+                        width: 100%;
+                        height: 100%;
+                        background: transparent;
+                        border: 1px solid #aaa;
+                        position: relative;
+    
+                        li{
+                            width: calc(100% / 3);
+                            height: 100%;
+                            padding: 0;
+                            position: absolute;
+                            top: 0;
+                            border: none;
+                            border-right: 1px solid #aaa;
+    
+                            @for $i from 1 through 3{
+                                &:nth-of-type(#{$i}){
+                                    left: calc(100% / 3 * #{$i - 1}) 
+                                }
+                            }
+    
+                            &::before{
+                                display: none;
+                            }
+    
+    
+                            a{
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                position: relative;
+    
+                                p{
+                                    font: bold 15px/50px 'Noto Sans KR', sans-serif;
+                                    color:#333;
+                                    margin-bottom: 0;
+                                    text-align: center;
+                                }
+    
+                                strong{
+                                    display: none;
+                                }
+    
+                                .phoneNum{
+                                    display: none;
+                                }
+    
+                                .branch_email{
+                                    display: none;
+                                }
+    
+                                img{
+                                    width: 60px;
+                                    height: 60px;
+                                    position: absolute;
+                                    top: 0px;
+                                    right: 0px;
+                                }
+                            }
+    
+                            &:last-of-type{
+                                margin-bottom: 0;
+                                border-bottom: none;
+                                border-right: 0;
+                            }
+    
+                            &.on{
+                                background: #333;
+
+                                a p{
+                                    color: #fff;
+                                }
+                            }
+
+                        }
+
+                        .branch_info{
+                            width: 100%;
+                            top: 50px;
+    
+                            .wrap{
+                                margin-bottom: 60px;
+    
+                                article{
+                                    height: 100%;
+                                    float: left;
+    
+                                    &.event_txt{
+                                        padding: 0 40px 0 20px;
+    
+                                        .event_tit{
+
+                                            h3{
+                                                font: 23px/1.6 'Jost', sans-serif;
+                                            }
+                                        }
+        
+                                        .event_inner_txt{
+                                            margin-top: 20px;
+                                            p{
+                                                font: 14px/1.6 'Jost', sans-serif;
+                                                color: #111;
+                                                margin-bottom: 40px;
+                                            }
+                                            a{
+                                                font: 14px/40px 'Jost', sans-serif;
+                                            }
+                                        }
+                                    }
+    
+                                    &.event_pic{
+                                        width: 40%;
+                                        
+                                        .event_inner_pic{
+                                            width: 100%;
+                                            height: 400px;
+                                        }
+                                    }
+                                    
+                                }
+                            }
+    
+                            .branch_info_des{
+                                padding: 0;
+
+                                >.branch_info_con{    
+                                    
+                                    >dt{
+                                        width: 100%;
+                                        height: 60px;
+                                        padding-left: 10px;
+                                        
+                                        h3{
+                                            display: inline-block;
+                                            padding: 0;
+                                            font: bold 16px/60px 'Noto Sans', sans-serif;
+    
+                                            &::after{
+                                                display: none;
+                                            }
+                                        }
+                                    }
+    
+                                    >dd{
+                                        width: 100%;
+                                        padding: 0 10px;
+    
+                                        .txt_table{
+                                            width: 100%;
+                                            padding: 30px 0;
+                                            border: none;
+    
+    
+                                            .left_txt{
+                                                width: 100%;
+                                                float: left;
+    
+                                                >p{
+                                                    font: bold 15px/1 'Noto Sans', sans-serif;
+                                                    margin-bottom: 20px;
+                                                }
+                                            }
+    
+                                            .right_txt{
+                                                width: 100%;
+    
+                                            }
+    
+                                            &:last-of-type{
+                                                border: none;
+                                            }
+                                        }
+                                        
+                                    }
+    
+                                    &:nth-of-type(2){
+    
+                                        >dd{
+                                            border-top: 1px solid #aaa;
+                                        }
+                                    }
+                                    &:nth-of-type(3){
+    
+                                        >dd{
+                                            border-top: 1px solid #aaa;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+//mobile layout
+@media screen and (max-width: 539px){
+    .location{
+
+        .inner{
+    
+            .map_wrap{
+                width: 100%;
+                height: 370px;
+    
+                .mapBox{
+    
+                    .branch{
+    
+                        li{
+                            a{
+    
+                                p{
+                                    font: bold 14px/50px 'Noto Sans KR', sans-serif;
+                                }
+                            }
+
+                        }
+
+                        .branch_info{
+    
+                            .wrap{
+    
+                                article{
+    
+                                    &.event_txt{
+                                        width: 100%;
+                                        padding: 0;
+                                        margin-bottom: 20px;
+    
+                                        .event_tit{
+
+                                            h3{
+                                                font: 22px/1.6 'Jost', sans-serif;
+                                            }
+                                        }
+        
+                                        .event_inner_txt{
+
+                                            p{
+                                                margin-bottom: 20px;
+                                            }
+                                        }
+                                    }
+    
+                                    &.event_pic{
+                                        width: 100%;
+                                        
+                                        .event_inner_pic{
+                                            height: 220px;
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

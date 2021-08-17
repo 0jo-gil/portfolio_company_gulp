@@ -1,0 +1,323 @@
+#main_contact{
+    width: 100%;
+    background: #edebe7;
+    padding: 80px 0;
+    position: relative;
+
+    .inner{
+        width: 1180px;
+        margin: 0 auto;
+
+        .main_contact_wrap{
+            width: 100%;
+            margin-top: 40px;
+            display: flex;
+
+            .main_contact_left{
+                width: 40%;
+                display: flex;
+                flex-wrap: wrap;
+
+                .main_contact_tit{
+                    width: 60%;
+    
+                    h1{
+                        font: bold 50px/1.4 "Lato";
+                        color: transparent;
+                        -webkit-text-stroke-width: 0.7px;
+                        -webkit-text-stroke-color: #333;
+                    }
+                }
+    
+                .main_contact_txt{
+                    width: 40%;
+    
+                    h3{
+                        font: bold 14px/1 'Lato';
+                        color: #111;
+                    }
+    
+                    p{
+                        font: 13px/1.4 'Lato';
+                        color: #777;
+                        margin-top: 15px;
+                        margin-bottom: 40px;
+                    }
+    
+                    a{
+                        display: block;
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid #333;
+                        border-radius: 50%;
+                        font-size: 14px;
+                        line-height: 31px;
+                        text-align: center;
+                        color: #333;
+                        transition: 0.5s;
+                    }
+                }
+
+                .main_contact_faq{
+                    width: 100%;
+                    padding-top: 20px;
+                    
+                    dl{
+                        width: 100%;
+                        // border: 1px solid red;
+
+                        dt{
+                            width: 100%;
+                            padding: 10px;
+                            font: 15px/1 'Lato';
+                            color: #fff;
+                            cursor: pointer;
+                            background: rgb(168, 150, 122);
+                            margin-bottom: 10px;
+                            position: relative;
+
+                            span{
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                                transform: rotate(0);
+                                transition: 0.5s;
+                            }
+
+                            &.on{
+                                background: rgb(117, 105, 85);
+
+                                span{
+                                    transform: rotate(45deg);
+                                }
+                            }
+                            
+                        }
+                        
+                        dd{
+                            width: 100%;
+                            display: none;
+                            padding: 15px 10px;
+                            font: 14px/1.4 'Lato';
+                            color: #111;
+                            margin-bottom: 10px;
+                            
+                        }
+                    }
+                }
+            }
+
+
+            .main_contact_right{
+                width: 60%;
+
+                .main_contact_box{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    .main_contact_inner_box{
+                        width: 80%;
+                        padding: 40px;
+                        border: 10px solid rgb(203, 205, 200);
+    
+                        h2{
+                            font: bold 20px/1.4 'Lato';
+                            color: #333;
+                            text-align: center;
+                            margin-bottom: 40px;
+                        }
+    
+                        fieldset{
+                            width: 100%;
+                            text-align: center;
+    
+                            div{
+                                width: 100%;
+                                position: relative;
+    
+                                label{
+                                    display: block;
+                                    font: bold 15px/1 'Lato';
+                                    color: #333;
+                                    margin-bottom: 20px;
+                                    text-align: left;
+                                }
+    
+                                input{
+                                    width: 100%;
+                                    border: none;
+                                    border-bottom: 1px solid #aaa;
+                                    background: transparent;
+                                    padding: 5px;
+                                    font: 14px/1 'Lato';
+                                    color: #111;
+                                    margin-bottom: 40px;
+                                    position: relative;
+                                    z-index: 2;
+
+                         
+                                }
+
+                                p{
+                                    position: absolute;
+                                    top: 44px;
+                                    left: 5px;
+                                    font: 12px/1 'Lato';
+                                    color: #aaa;
+                                    z-index: 1;
+                                    transition: 0.5s;
+                                }
+    
+                                &.main_contact_phone{
+    
+                                    input{
+                                        margin-bottom: 70px;
+                                    }
+                                }
+                                
+                                &.on{
+
+                                    p{
+                                        top: 72px;
+                                    }
+                                }
+                            }
+    
+                            button{
+                                width: 40%;
+                                height: 50px;
+                                border: 1px solid #333;
+                                background: #333;
+                                font: 15px/50px 'Lato';
+                                color: #fff;
+                                cursor: pointer;
+                                transition: 0.5s;
+    
+                                &:hover{
+                                    background: #aaa;
+                                    color: #fff;
+                                    border: 1px solid #aaa;
+                                }
+                            }
+                        }
+                    }
+    
+                }
+            }
+      
+
+         
+        }
+    }
+}
+
+//tablet
+@media screen and (max-width: $tablet){
+    #main_contact{
+    
+        .inner{
+            width: 100%;
+            padding: 0 20px;
+    
+            .main_contact_wrap{
+                flex-wrap: wrap;
+    
+                .main_contact_left{
+                    width: 100%;
+                    margin-bottom: 20px;
+    
+                    .main_contact_tit{
+                        width: 40%;
+                    }
+        
+                    .main_contact_txt{
+                        width: 60%;
+                    }
+    
+                    .main_contact_faq{
+                        width: 100%;
+                        padding-top: 40px;
+                    }
+                }
+    
+    
+                .main_contact_right{
+                    width: 100%;
+    
+                    .main_contact_box{
+        
+                        .main_contact_inner_box{
+                            width: 100%;
+                            padding: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//mobile
+@media screen and (max-width: $mobile){
+    #main_contact{
+        padding: 60px 0;
+
+        .inner{
+    
+            .main_contact_wrap{
+    
+                .main_contact_left{
+    
+                    .main_contact_tit{
+                        h1{
+                            font-size: 40px;
+                        }
+                    }
+
+                    .main_contact_faq{
+                        
+                        dl{
+                            width: 100%;
+    
+                            dt{
+                                font-size: 14px;
+                            }
+                            
+                            dd{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+    
+    
+                .main_contact_right{
+    
+                    .main_contact_box{
+                        h2{
+                            font-size: 18px;
+                        }
+        
+                        .main_contact_inner_box{
+                            width: 100%;
+                            padding: 20px;
+
+                            fieldset{
+                                div label{
+                                    font-size: 14px;
+                                }
+
+                                button{
+                                    height: 40px;
+                                    font: 14px/40px 'Lato';
+                                }
+                            } 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

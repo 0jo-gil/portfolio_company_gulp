@@ -1,0 +1,159 @@
+<include src="../header/header.html"></include>
+
+<section class="content community">
+
+    <div class="sub_visual">
+        <h1>
+            COMMUNITY /
+            <span>커뮤니티</span>
+        </h1>
+    </div>
+    
+    
+    <div class="inner">
+   
+
+        <div class="notice_wrap">
+            <strong>NOTICE</strong>
+            
+            <ul class="notice_slide">
+                <li>Lorem ipsum dolor sit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                <li>Lorem ipsum dolor sit amet consectetur.</li>
+                <li>Lorem, ipsum dolor.</li>
+                <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+            </ul>
+           
+            <div class="slide_btn">
+                <a href="#" class="btn_up">
+                    <i class="fas fa-chevron-up"></i>
+                </a>
+                <a href="#" class="btn_down">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <a href="#" class="pause_btn">
+                    <i class="fas fa-pause"></i>
+                </a>
+                <a href="#" class="start_btn on">
+                    <i class="fas fa-play"></i>
+                </a>
+                
+            </div>
+        </div>
+
+        
+       <div class="csInfo">
+           <div class="infoTxt">
+               <h1>CUSTOMER SERVICE</h1>
+               <p>
+                   Any querstions?
+                   <span>We're here to help</span>
+               </p>
+               <span class="mark">?</span>
+           </div>
+       </div>
+        
+        <div class="tab_box">
+            <dl>
+                <dt class="on">
+                    <a href=".tab1">BOARD</a>
+                </dt>
+                <dd class="tab1 on">
+                    
+                    <div class="community_box">
+                        <div class="sub_search">
+                            <form action="/">
+                                <legend class="h">커뮤니티 검색창입니다.</legend>
+                                <div class="search2">
+                                    <select name="selectSearch" id="selectSearch">
+                                        <option value="">제목</option>
+                                        <option value="">내용</option>
+                                    </select>
+                                    <input type="text" placeholder="검색어를 입력하세요.">
+                                    <button type="submit">
+                                        SEARCH
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <table summary="홈페이지 게시판">
+                            <caption class="h">
+                                홈페이지 번호, 내용, 작성자, 작성일 순서의 게시판입니다.
+                            </caption>
+                            
+                        </table>
+        
+                        <div class="pagination">
+                            <a href="#" class="prev">
+                                <i class="fas fa-angle-left"></i>
+                            </a>
+                            <p class="numbers">
+                                
+                                <a href="#">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                
+                            </p>
+            
+                            <a href="#" class="next">
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </dd>
+
+                <dt>
+                    <a href=".tab2">FAQ</a>
+                </dt>
+                <dd class="faq_menu tab2">
+                    <div class="wrap">
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        
+        <div class="ani_question">
+            <h1>STILL LOST?</h1>
+            <div class="wrap">
+                <div class="question_text">
+                    <p>
+                        Please Call or Email us.
+                        <span>02) 000 0000</span>
+                    </p>
+                    <strong>get in touch through email or social media channels.</strong>
+
+                    <a href="#">
+                        <span>
+                            <i class="fas fa-chevron-right"></i>
+                        </span>GET IN TOUCH
+                    </a>
+                </div>
+                <div class="question_pic">
+                    <div class="innerPic"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="static/myTab.js"></script>
+<script src="static/myToggle.js"></script>
+<script src="js/sub/community/community.js"></script>
+<script>
+     $(document).ready(function(){
+            //tab menu 플러그인 호출
+            $(".tab_box").myTab();
+
+            //toggle 플러그인 호출
+            $(".faq_menu").children(".wrap").myToggle({
+                btn: "dt",
+                boxes: "dd",
+                active: "on"
+            });
+        });
+</script>
+
+<include src="../footer/footer.html"></include>
