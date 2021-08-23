@@ -23,7 +23,6 @@
     
     MyDrag.prototype.bindingEvent = function(){
         this.$slide_inner.css({transform: "translateX(0)"});
-
         this.$slide_inner.on("mouseenter", function(e){
             if($(".slider_cursor").length < 1){
             $(e.currentTarget).parent(this.$slide)
@@ -107,7 +106,6 @@
             };
         }.bind(this));
     };
-
 })(jQuery);
 
 

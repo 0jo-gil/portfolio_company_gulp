@@ -16,12 +16,20 @@ let k = 0;
 let num = 0;
 let active = 1;
 let isRotate = 0;
+let windowWid;
 
 const deg = 45;
 var timer;
 var pic_timer;
 var wheel_time;
 var isScroll = false;
+
+$(window).resize(function(){
+    windowWid = $(this).outerWidth();
+    if(windowWid < 540){
+        $(".main_menu_pic").remove();
+    }
+});
 
 
 //main visual script
@@ -37,29 +45,39 @@ for(let i=0; i<$main_menu_list.length; i++){
 
 $menu_btn.on("click", function(e){
     e.preventDefault();
-
-    $(this).parent($main_menu_mo).addClass("on");
-
-    $(".main_menu").addClass("on");
-    $main_menu_list.addClass("on");
-    $("body").addClass("on");
+    addBtn(this);
 });
 
 $close_btn.on("click", function(e){
     e.preventDefault();
-    $(this).parent($main_menu_mo).removeClass("on");
+    removeBtn(this);
+});
+
+function addBtn(el){
+    $(el).parent($main_menu_mo).addClass("on");
+
+    $(".main_menu").addClass("on");
+    $main_menu_list.addClass("on");
+    $("body").addClass("on");
+};
+
+function removeBtn(el){
+    $(el).parent($main_menu_mo).removeClass("on");
+
     $(".main_menu").removeClass("on");
-    
     $main_menu_list.removeClass("on");
     
     $("body").removeClass("on");
-
-});
+};
 
 $main_menu_list.children("a").on("mouseenter focusin", function(){
-    let img_data = $(this).attr("img-data");
+    imgShow(this);
+});
 
-    if($(".main_menu_pic").length < 1){
+function imgShow(el){
+    let img_data = $(el).attr("img-data");
+
+    if($(".main_menu_pic").length < 1 && window_wid > 539){
         $(".main_menu")
             .append(
                 $("<div class='main_menu_pic'>")
@@ -67,19 +85,19 @@ $main_menu_list.children("a").on("mouseenter focusin", function(){
                         $("<img>")
                     )
             )    
-    }
+    };
 
     $(".main_menu_pic").show();
     setTimeout(function(){
         $(".main_menu_pic").addClass("on");
     }, 200);
     $(".main_menu_pic").children("img").attr({src: img_data});
-});
+};
 
 $main_menu_list.children("a").on("mouseleave focusout", function(){
     $(".main_menu_pic").hide();
     $(".main_menu_pic").removeClass("on");
-})
+});
 
 $main_menu_list.children("a").on("mousemove", function(e){
     let posX = e.clientX ;
@@ -87,8 +105,8 @@ $main_menu_list.children("a").on("mousemove", function(e){
 
     $(".main_menu_pic").css({
         transform: "translate("+posX / 8+"px, "+posY / 3+"px)"       
-    })
-})
+    });
+});
 
 function letter(el ,interval, index){
     if(el === undefined) {

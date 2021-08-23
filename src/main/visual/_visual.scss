@@ -140,7 +140,7 @@
 
     .frame{
         width: 350px;
-        height: 600px;
+        height: 500px;
         // max-width: 490px;
         // min-width: 346px;
         margin-top: -25vh;
@@ -258,7 +258,7 @@
                 transform: translateY(20px);
                 transition: 0.5s 0.5s;
                 position: fixed;
-                top: 67vh;
+                bottom: -30px;
                 left: 0;
                 text-align: center;
 
@@ -477,7 +477,7 @@
     
         .frame{
             width: 330px;
-            height: 550px;
+            height: 450px;
             margin-top: -15vh;
             margin-left: -165px;
     
@@ -505,10 +505,6 @@
                         }
                     }
     
-                }
-    
-                >p{
-                    top: 62vh;
                 }
             }
         }
@@ -547,7 +543,7 @@
     
         .frame{
             width: 270px;
-            height: 470px;
+            height: 420px;
             margin-top: -12vh;
             margin-left: -135px;
     
@@ -577,9 +573,17 @@
     
                 >p{
                     font-size: 12.5px;
-                    top: 53vh;
                 }
             }
         }
     }
+}
+
+@keyframes scrollAni{
+    0%{top: -10px;}
+    45%{top: 33px;}
+    60%{ top: 25px;}
+    75%{top: 33px;}
+    90%{top: 29px;}
+    100%{top: 50px;}
 }

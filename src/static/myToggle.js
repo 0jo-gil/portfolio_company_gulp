@@ -42,7 +42,6 @@
       this.$frame.find("dd").slideUp(this.speed); 
    
       if(isOn){
-         // this.$frame.find("dt").removeClass(this.active); 
          this.$frame.find("dd").slideUp(this.speed); 
          return;
       }

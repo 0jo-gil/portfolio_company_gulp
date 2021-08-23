@@ -122,7 +122,6 @@
         var msg = $("[name="+name+"]").attr("placeholder");
     
         if(txt==""){
-            // alert(msg);
             $("[name="+name+"]").addClass("error");
             return false;
         }else{

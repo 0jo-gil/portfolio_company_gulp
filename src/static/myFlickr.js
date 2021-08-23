@@ -107,14 +107,6 @@
             })
         });
 
-        $("body").on("click", ".pop .popPic", function(){
-            $(".popMask").remove();
-            $(".pop").fadeOut(500,function(){
-                $(".pop").remove();
-                $("body").removeClass("hidden");
-            });
-        });
-
         // 사용자 아이디 클릭시 사용자 갤러리 이미지 출력
         $("body").on("click", "#gallery li .profile", function(e){
             var userId = $(e.currentTarget).find("span").text();
@@ -342,7 +334,7 @@
             $("<aside class='pop'>")
                 .css({
                     width: '100%', height: "100%", position: "fixed", top: 0, left: 0, zIndex: 21,
-                    boxSizing: "border-box", padding: "3vw", background: "#fff", display: "none", cursor: "pointer"
+                    boxSizing: "border-box", padding: "3vw", background: "#fff", display: "none"
                 })
                 .append(
                     $("<img class='popPic'>").attr("src", imgSrc).css({
@@ -375,13 +367,7 @@
                                     color: "#000",
                                     opacity: 0.5,
                                     fontStyle: "italic"
-                                }),
-                            // $("<span>").text("/ " +li_len)
-                            //     .css({
-                            //         font: "27px/1 'arial'",
-                            //         color: "#000",
-                            //         opacity: 0.5
-                            //     })
+                                })
                         )
                 )
         )
