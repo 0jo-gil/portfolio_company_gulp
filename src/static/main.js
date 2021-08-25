@@ -29,7 +29,7 @@ $skipNavi_btn.on("click", function(e){
     let target = $(this).attr("href");
     let posY = $(target).offset().top;
     e.preventDefault();
-    console.log(target);
+    
     $("html, body").animate({scrollTop: posY}, 1000);
 });
 

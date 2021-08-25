@@ -192,7 +192,6 @@
         
         $.ajax(result_opt)
         .success(function(data){   
-            console.log(data);
             var item = data.photos.photo;  
             this.createList(item);
         }.bind(this))

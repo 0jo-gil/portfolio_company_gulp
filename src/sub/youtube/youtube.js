@@ -18,7 +18,6 @@ $(window).resize(function(){
 
 function resize(wid){
     article_ht = $video2_wrap.find("article").outerHeight(true);
-    console.log(article_ht);
     if(wid < 540){
         $video2
             .css({

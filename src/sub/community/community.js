@@ -97,7 +97,6 @@ function callData(url){
         data: "json"
     })
     .success(function(data){
-        console.log(data);
         createTable(frame, data);
         createFaq(faq, data);
     })
@@ -107,7 +106,6 @@ function callData(url){
 };
 
 function createTable(target, data){
-    console.log(data);
     var items = data.board;
 
     target.children("table")

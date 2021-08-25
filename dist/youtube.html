@@ -10,9 +10,21 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
     <script src="https://kit.fontawesome.com/8fb19dd542.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="static/mySkip.js"></script>
+    <script defer src="static/custom.js"></script>
     <script defer src="js/sub/header/header.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#skipNavi").mySkip();
+        });
+    </script>
 </head>
 <body>
+
+    <ul id="skipNavi">
+        <li><a href=".content">본문내용 바로가기</a></li>
+        <li><a href="#footer">하단메뉴 바로가기</a></li>
+    </ul>
 
     <header id="header">
         <div class="inner">
@@ -276,7 +288,7 @@
                 <h2>Customer Service</h2>
                 <ul>
                     <li><a href="#">Q&A</a></li>
-                    <li><a href="#">GUIDE</a></li>
+                    <li><a href="#">Guide</a></li>
                     <li><a href="#">Terms of Use</a></li>
                     <li><a href="#">Privacy Pilicy</a></li>
                 </ul>

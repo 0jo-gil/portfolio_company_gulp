@@ -12,7 +12,6 @@ $(window).resize(function(){
 
 function resize(wid){
     gallery_con_ht = $(".gallery_box").find("li").outerHeight();
-    console.log(gallery_con_ht);
 
     if(wid < 540){
         $(".gallery_box")
