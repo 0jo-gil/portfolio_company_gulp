@@ -75,6 +75,8 @@ $menuWeb.on("mouseenter focusin", function(){
     openSub();
 });
 
+
+
 $menuWeb.on("mouseleave focusout", function(){
     closeSub();
 
@@ -133,13 +135,13 @@ function gnbBg(x){
     var gnb_li_ul_wid = $gnb_li.children("ul").outerWidth();
     var isGnbBg = $(".gnbBg").length;
     if(!isGnbBg){
-        $("#gnb")
+        $("body")
             .append(
                 $("<div class='gnbBg'>")
                     .css({
                         width: gnb_li_ul_wid,
                         height: gnbSub_ht,
-                        position: "fixed",
+                        position: "absolute",
                         top: $header_hi,
                         left: x,
                         backgroundColor: "#304d78",
@@ -150,8 +152,7 @@ function gnbBg(x){
     };
 
     $(".gnbBg").slideDown(300, function(){
-
-    $(".gnbBg").animate({left: x}, 150); 
+        $(".gnbBg").animate({left: x}, 150); 
     });
 
 };
@@ -170,11 +171,11 @@ function createTit(txt){
             .append(
                 $("<div class='gnbSub_wrap'>")
                 .css({
-                    position: "fixed",
+                    position: "absolute",
                     width: "100%",
                     height: gnbSub_ht,
-                    top: 117,
-                    left: 0,
+                    top: 70,
+                    left: -310,
                     display: "none",
                     zIndex: 7
                 })
@@ -198,6 +199,7 @@ function openSub(){
     var isbgGnb = $(".bgGnb").length;
     var isgnbSubBg = $(".gnbSubBg").length;
 
+
     if(!isgnbSubBg){
         $("body")
             .append(
@@ -216,13 +218,13 @@ function openSub(){
     };
 
     if(!isbgGnb){
-        $(".menuWeb")
+        $("body")
             .prepend(
                 $("<div class='bgGnb'>")
                     .css({
                         width: "100%",
                         height: gnbSub_ht,
-                        position: "fixed",
+                        position: "absolute",
                         top: $header_hi,
                         left: 0,
                         background: "#faf9f8",
@@ -242,6 +244,7 @@ function openSub(){
 };
 
 function closeSub(){
+
     $(".bgGnb").stop().slideUp(100, function(){
         $(this).remove();
     });
