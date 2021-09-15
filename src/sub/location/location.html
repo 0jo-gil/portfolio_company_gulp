@@ -1,5 +1,8 @@
 <include src="../header/header.html"></include>
 
+
+<!-- location 섹션 -->
+<!-- 카카오맵 api 활용 지도 출력 -->
 <section class="content location">
     <div class="sub_visual">
         <h1>
@@ -13,6 +16,9 @@
 
         <div class="map_wrap">
 
+            <!-- 카카오 api 활용 지점 위치 설정하여 출력 -->
+            <!-- 각 지점 리스트 클릭 이벤트 활용하여 클릭시 지도 위치 변경 -->
+            <!-- 브랜치 리스트 클릭시 탭메뉴 활용하여 리스트 정보 출력 이벤트 연결 -->
             <div id="map">
             </div>        
             
@@ -377,8 +383,10 @@
     </div>
 </section>
 
+<!-- 카카오맵 api -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1de4287c77741e8d3210d47b17ddcb16"></script>
 <script src="js/sub/location/map.js"></script>
+
 <script src="js/sub/location/location.js"></script>
 
 <include src="../footer/footer.html"></include>

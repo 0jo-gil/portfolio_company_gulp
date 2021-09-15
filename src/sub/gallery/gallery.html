@@ -1,5 +1,7 @@
 <include src="../header/header.html"></include>
 
+<!-- gallery 섹션 -->
+<!-- flickr api 활용 호출 플러그인 제작 -->
 <section class="content gallery">
 
     <div class="sub_visual">
@@ -10,6 +12,8 @@
     </div>
 
     <div class="inner">
+
+        <!-- 퀵 메뉴 클릭시 해당 조건 검색어 이미지 출력 이벤트 연결 -->
         <div class="quickSearch">
             <div class="wrap">
                 <div class="innerTxt">
@@ -63,6 +67,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- 검색어 입력시 해당 이미지 호출 -->
         <div class="sub_search">
             <form action="/">
                 <legend class="h">갤러리 검색창입니다.</legend>
@@ -79,6 +85,7 @@
             </form>
         </div>
 
+        <!-- 초기 이미지 호출 섹션 -->
         <div class="gallery_box">
             
         </div>
@@ -86,8 +93,11 @@
     </div>
 </section>
 
+<!-- isotope 플러그인 활용 호출 이미지 정렬 -->
 <script src="static/isotope.pkgd.min.js"></script>
 <script src="static/myFlickr.js"></script>
+
+<!-- flickr api 활용하여 이미지 호출 플러그인 제작 및 호출 -->
 <script>
         $(document).ready(function(){
             $(".content .inner").myFlickr({

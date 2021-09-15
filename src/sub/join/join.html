@@ -1,5 +1,8 @@
 <include src="../header/header.html"></include>
 
+<!-- join 섹션 -->
+<!-- form 태그 접근성 준수 작성 -->
+<!-- myValidation.js 회원가입 조건 충족 플러그인 제작 및 적용 -->
 <section class="content join">
     <div class="sub_visual">
         <h1>
@@ -28,6 +31,8 @@
             </div>
         </div>
         
+        <!-- 약관 동의 체크박스 클릭 이벤트 애니메이션 적용 -->
+        <!-- 각 input 조건 설정하여 키보드 입력시 조건 충족 불충족 확인 이벤트 연결 -->
         <form action="#" method="result" id="myForm">
             <fieldset class="joinCheck">
                 <h2>약관동의</h2>
@@ -246,6 +251,8 @@
 
 <script src="static/myValidation.js"></script>
 <script src="js/sub/join/join.js"></script>
+
+<!-- 자체제작 회원가입 조건 확인 플러그인 호출 -->
 <script>
     $(document).ready(function(){
         $("#myForm").myValidation({

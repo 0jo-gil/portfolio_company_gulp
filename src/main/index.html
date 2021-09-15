@@ -13,8 +13,10 @@
     <script defer src="static/custom.js"></script>
     <script defer src="static/visual.js"></script>
     <script defer src="static/main.js"></script>
+
+    <!-- news 섹션 클릭 드래그 슬라이드 플러그인 제작 호출 -->
+    <!-- main_contact 섹션 faq 메뉴 플러그인 제작 호출 -->
     <script>
-        //tab menu 
         $(document).ready(function(){
             $(".news_slide1").myDrag();
             $(".news_slide2").myDrag();
@@ -31,10 +33,13 @@
     </script>
 </head>
 <body>
+    <!-- 웹 접근성을 위한 skipnavi 이벤트 적용 -->
     <ul id="skipNavi">
         <li><a href="#vision">본문내용 바로가기</a></li>
         <li><a href="#footer">하단메뉴 바로가기</a></li>
     </ul>
+
+    <!-- 각 섹션 클래스 활용 스크롤 이벤트 연결 -->
 
     <include src="main_header/main_header.html"></include>
     <include src="visual/visual.html"></include>

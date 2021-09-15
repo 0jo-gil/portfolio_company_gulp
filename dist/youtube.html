@@ -13,6 +13,8 @@
     <script src="static/mySkip.js"></script>
     <script defer src="static/custom.js"></script>
     <script defer src="js/sub/header/header.js"></script>
+
+    <!-- 웹접근성을 위해 탭키 누를시 skipnavi 적용 플러그인 제작 및 호출 구문 -->
     <script>
         $(document).ready(function(){
             $("#skipNavi").mySkip();
@@ -21,11 +23,13 @@
 </head>
 <body>
 
+    <!-- skip navi 키보드 탭키 클릭시 이벤트 적용 -->
     <ul id="skipNavi">
         <li><a href=".content">본문내용 바로가기</a></li>
         <li><a href="#footer">하단메뉴 바로가기</a></li>
     </ul>
 
+    <!-- header섹션 -->
     <header id="header">
         <div class="inner">
 
@@ -35,6 +39,7 @@
                 </h1>
             </div>
 
+            <!-- 메뉴 호출시 2depth 메뉴 출력, 접근성을 위해 키보드 탭키 누를시에도 적용 -->
             <nav class="menuWeb">
 
                 <ul id="gnb">
@@ -116,6 +121,8 @@
             
             </nav>
 
+            <!-- mobile 반응형 웹 메뉴 버튼 -->
+             <!-- 버튼 클릭시 menuMo 출력 이벤트 연결 -->
             <div class="btnCall">
                 <a href="#">
                     <span></span>
@@ -169,6 +176,8 @@
                         <a href="join.html">회원가입</a>
                     </li>
                     <li>
+                        
+                        <!-- 홈페이지 검색 버튼 구조화 -->
                         <form action="/">
                             <legend class="h">홈페이지 검색창입니다.</legend>
                             
@@ -188,6 +197,9 @@
         </div>
     </header>
 
+
+<!-- youtube 섹션 -->
+<!-- youtube api 활용 개인 playlist 호출 -->
 <section class="content youtube">
     <div class="sub_visual">
         <h1>
@@ -196,6 +208,9 @@
         </h1>
     </div>
     <div class="inner">
+        <!-- slide 섹션에 youtube 첫번째 비디오 호출 동적 생성 -->
+        <!-- 버튼 클릭시 slide 이벤트 적용 -->
+        <!-- 썸네일 클릭시 iframe 활용하여 동영상 재생 이벤트 연결 -->
         <div class="video1">
             <h1>COLLECTION</h1>
            
@@ -235,6 +250,8 @@
             </div>
         </div>
 
+        <!-- 두번째 비디오 호출 동적 생성 -->
+        <!-- 썸네일 클릭시 iframe 활용하여 동영상 재생 이벤트 연결 -->
         <div class="video2">
             <div class="artGallery">
                 <div class="wrap">
@@ -252,6 +269,8 @@
 
 <script src="static/myYoutube.js"></script>
 <script src="js/sub/youtube/youtube.js"></script>
+
+<!-- youtube api 활용하여 각 type에 맞는 playlist 호출 비디오 동적 생성 -->
 <script>
     $(document).ready(function(){
         $(".vidGallery .gallery_list .wrap").MyYoutube({
@@ -268,6 +287,7 @@
     });
 </script>
 
+<!-- footer 섹션 -->
 <footer id="footer">
     <div class="inner">
         <div class="wrap">
@@ -305,8 +325,8 @@
                 </form>
             </div>
         </div>
-
-
+        
+        <!-- 버튼 클릭시 페이지 상단 스크롤 모션 이벤트 연결 -->
         <a href="#header" class="topBtn">Back to top <span>&uarr;</span></a>
     </div>
 </footer>

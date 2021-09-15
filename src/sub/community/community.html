@@ -1,5 +1,8 @@
 <include src="../header/header.html"></include>
 
+
+<!-- community 섹션 -->
+<!-- 게시판, faq 접근성 준수 / json 비동기 호출 활용 테이블 태그 및 데이터 태그 접근성 준수하여 동적 생성-->
 <section class="content community">
 
     <div class="sub_visual">
@@ -53,6 +56,7 @@
            </div>
        </div>
         
+       <!-- tab menu 플러그인 제작 적용 -->
         <div class="tab_box">
             <dl>
                 <dt class="on">
@@ -107,6 +111,8 @@
                 <dt>
                     <a href=".tab2">FAQ</a>
                 </dt>
+
+                <!-- faq 아코디언 메뉴 이벤트 플러그인 제작 및 호출 적용 -->
                 <dd class="faq_menu tab2">
                     <div class="wrap">
 
@@ -142,6 +148,8 @@
 <script src="static/myTab.js"></script>
 <script src="static/myToggle.js"></script>
 <script src="js/sub/community/community.js"></script>
+
+<!-- tab menu, faq menu 플러그인 제작 호출 -->
 <script>
      $(document).ready(function(){
             //tab menu 플러그인 호출

@@ -13,8 +13,10 @@
     <script defer src="static/custom.js"></script>
     <script defer src="static/visual.js"></script>
     <script defer src="static/main.js"></script>
+
+    <!-- news 섹션 클릭 드래그 슬라이드 플러그인 제작 호출 -->
+    <!-- main_contact 섹션 faq 메뉴 플러그인 제작 호출 -->
     <script>
-        //tab menu 
         $(document).ready(function(){
             $(".news_slide1").myDrag();
             $(".news_slide2").myDrag();
@@ -31,10 +33,15 @@
     </script>
 </head>
 <body>
+    <!-- 웹 접근성을 위한 skipnavi 이벤트 적용 -->
     <ul id="skipNavi">
         <li><a href="#vision">본문내용 바로가기</a></li>
         <li><a href="#footer">하단메뉴 바로가기</a></li>
     </ul>
+
+    <!-- 각 섹션 클래스 활용 스크롤 이벤트 연결 -->
+
+    <!-- main페이지 header 섹션 -->
 
     <header id="main_header">
         <a href="#" class="main_menu_mo">
@@ -42,6 +49,7 @@
             <span class="main_close_btn">CLOSE</span>
         </a>
 
+        <!-- 메뉴 호버 시 각 이미지 호출 이벤트 적용 -->
         <div class="main_menu">
             <ul id="main_gnb">
                 <li>
@@ -103,6 +111,8 @@
             </ul>
         </div>
     </header>
+    <!-- visual 섹션 -->
+    <!-- 각 썸네일 회전 배치 후 버튼 클릭시 이미지 색상 활성화 및 회전 애니메이션 이벤트 적용 -->
     <figure id="visual">
         <div class="visual_tit">
             <h1>
@@ -110,6 +120,7 @@
             </h1>
         </div>
         
+        <!-- 버튼 클릭 회전 -->
         <div class="visual_prev">
             <a href="#" class="prev_btn">PREV</a>
         </div>
@@ -351,6 +362,8 @@
             <p>SCROLL</p>
         </div>
     </figure>
+    <!-- vision 섹션 -->
+    <!-- 각 썸네일 마우스 호버시 clip-path 활용 애니메이션 이벤트 -->
     <section id="vision">
         <div class="main_page_tit">
             <p>
@@ -392,6 +405,7 @@
 
             </div>
             
+            <!-- 썸네일 호버 이벤트 -->
             <div class="vision_content">
                 <div class="vision_content_wrap">
                     <article>
@@ -480,6 +494,9 @@
             </div>
         </div>
     </section>
+    <!-- about 섹션 -->
+    <!-- 메뉴 리스트 호버시 리스트 하위 메뉴 호출 이벤트 연결, 접근성에 맞춰 키보드 탭키 누를시 이벤트 연결 -->
+
     <section id="about">
         <div class="main_page_tit">
             <p>
@@ -492,6 +509,7 @@
                 <div class="about_list_index">
                     <h1>About us</h1>
 
+                    <!-- 리스트 호버 하위 메뉴 호출, 접근성 준수 -->
                     <ul class="about_list_btn">
                         <li><a href=".about_box1">What we do</a></li>
                         <li><a href=".about_box2">How we work</a></li>
@@ -625,6 +643,9 @@
             </div>
         </div>
     </section>
+    <!-- brand 섹션 -->
+    <!-- article 호버 이벤트 연결 -->
+
     <section id="brand">
         <div class="main_page_tit">
             <p>
@@ -636,6 +657,8 @@
             <span class="main_page_num">03</span>
 
             <div class="wrap">
+
+                <!-- 박스 호버 시 사진 출력 이벤트 -->
                 <div class="brand_box_left">
                     <div class="brand_box_content">
                         <article>
@@ -691,6 +714,8 @@
            
         </div>
     </section>
+    <!-- banner 섹션 -->
+
     <section id="banner">
         <div class="inner">
             <h1>
@@ -702,6 +727,10 @@
             </p>
         </div>
     </section>
+    <!-- news 섹션 -->
+    <!-- 메뉴 리스트 클릭시 하위 슬라이드 메뉴 출력 이벤트 연결 -->
+    <!-- 클릭 드래스 시 슬라이드 메뉴 이벤트 구현 -->
+
     <section id="news">
         <div class="main_page_tit">
             <p>
@@ -717,6 +746,7 @@
                     BRINGING PURPOSE TO STORIES
                 </h1>
 
+                <!-- 메뉴 리스트 클릭시 하위 슬라이드 메뉴 호출 -->
                 <div class="news_btn_list">
                     <ul class="news_btn">
                         <li class="on">
@@ -765,6 +795,8 @@
 
             </div>
 
+            <!-- 섹션 마우스 호버시 마우스 포인터 이미지 동적 생성 이벤트 연결 -->
+            <!-- 클릭 드래그 슬라이드 플러그인 제작 및 적용 -->
             <div class="news_right_box">
 
                 <div class="news_right_box_pic">
@@ -1003,6 +1035,9 @@
             </div>
         </div>
     </section>
+    <!-- main_contact 섹션 -->
+    <!-- faq 플러그인 제작 및 호출 -->
+
     <section id="main_contact">
         <div class="main_page_tit">
             <p>
@@ -1033,6 +1068,7 @@
                         </a>
                     </div>
 
+                    <!-- dt 태그 클릭시 내용 섹션 출력 (아코디언 메뉴) 이벤트 연결 -->
                     <div class="main_contact_faq">
                         <dl class="faq_menu">
                             <dt>
@@ -1109,6 +1145,8 @@
             </div>
         </div>
     </section>
+    <!-- footer 섹션 -->
+
     <footer id="footer">
         <div class="inner">
             <div class="wrap">
@@ -1148,6 +1186,7 @@
             </div>
 
 
+            <!-- 버튼 클릭 시 페이지 상단 이동 스크롤 이벤트 연결 -->
             <a href="#header" class="topBtn">Back to top <span>&uarr;</span></a>
         </div>
     </footer>
